@@ -10,7 +10,6 @@ public class Caminhao extends Veiculo {
 
     public Caminhao(int id, String fabricante, Status status,Especificacao especificao, String mercadoria, Double pesoCarga) {
         setId(id);
-        setFabricante(fabricante);
         setStatus(status);
         setEspecificacao(especificao);
         this.mercadoria = mercadoria;

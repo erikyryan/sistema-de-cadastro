@@ -39,4 +39,11 @@ public class Especificacao {
         this.fabricante = fabricante;
     }
 
+	@Override
+	public String toString() {
+		return "Especificacao [modelo=" + modelo + ", cor=" + cor + ", fabricante=" + fabricante + "]";
+	}
+
+    
+    
 }

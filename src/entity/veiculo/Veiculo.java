@@ -4,8 +4,8 @@ public abstract class Veiculo {
 
     private int id;
     private Status status;
-    private String fabricante;
     private Especificacao especificacao = new Especificacao(); 
+    //private String anoDeFabricacao;
 
     public String locomocao(){
         return null;
@@ -17,14 +17,6 @@ public abstract class Veiculo {
 
     public void setId(int id) {
         this.id = id;
-    }
-
-    public String getFabricante() {
-        return this.fabricante;
-    }
-
-    public void setFabricante(String fabricante) {
-        this.fabricante = fabricante;
     }
 
     public Especificacao getEspecificacao() {

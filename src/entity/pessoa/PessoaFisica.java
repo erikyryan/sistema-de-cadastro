@@ -1,8 +1,14 @@
 package entity.pessoa;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import entity.veiculo.Carro;
+
 public class PessoaFisica extends Pessoa {
     private String cpf;
     private String senha;
+    private List<Carro> carros = new ArrayList<>();
 
     public PessoaFisica(int id,String nome, String senha, Status status) {
     	setId(id);
@@ -20,14 +26,6 @@ public class PessoaFisica extends Pessoa {
         setEndereco(endereco);
     }
 
-    public String getCPF() {
-        return this.cpf;
-    }
-
-    public void setCPF(String cpf) {
-        this.cpf = cpf;
-    }
-
     public String getSenha() {
         return this.senha;
     }
@@ -35,5 +33,21 @@ public class PessoaFisica extends Pessoa {
     public void setSenha(String senha) {
         this.senha = senha;
     }
+
+	public String getCpf() {
+		return cpf;
+	}
+
+	public void setCpf(String cpf) {
+		this.cpf = cpf;
+	}
+
+	public List<Carro> getCarros() {
+		return carros;
+	}
+
+	public void setCarro(Carro carro) {
+		this.carros.add(carro);
+	}
 
 }
