@@ -1,10 +1,12 @@
 package menu;
 
+
 import java.util.Scanner;
 
+import entity.pessoa.PessoaFisica;
+
 public interface MenuVeiculo {
-    public void remover(Scanner entrada);
-    public void exibir(Scanner entrada);
-    public void adicionar(Scanner entrada);
-    public void verificar(Scanner entrada);
+    public void remover(PessoaFisica pessoa, Scanner entrada);
+    public void adicionar(PessoaFisica pessoa, Scanner entrada);
+	public void exibir(PessoaFisica pessoa);
 }

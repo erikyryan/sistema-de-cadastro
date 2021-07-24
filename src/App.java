@@ -16,6 +16,7 @@ public class App {
 		    MenuApplication menu = new MenuApplication();
 	    
 		    menu.MenuUsuario(entrada, pessoas);
+		    
 		}catch(InputMismatchException e) {
 			System.err.println("[ERROR]: Falha ao passar os dados para o scanner");			
 			e.printStackTrace();
