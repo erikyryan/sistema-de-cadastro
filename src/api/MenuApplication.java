@@ -51,7 +51,6 @@ public class MenuApplication {
 	        entrada.nextLine();
 	        opc = opc == 1 ? -1 : 0; 
 	    }while(opc != -1);
-	    entrada.close();
 	}
 
 	public void MenuVeiculo(Scanner entrada, Map<String,PessoaFisica> pessoas) {
@@ -95,7 +94,6 @@ public class MenuApplication {
 	        entrada.nextLine();
 	        opc = opc == 1 ? -1 : 0; 
 	    }while(opc != -1);
-	    entrada.close();
 	}
 	
 	private Boolean autenticacao(Integer chave, Map<String,PessoaFisica> pessoas) {
