@@ -69,7 +69,6 @@ public class MenuPessoaImpl implements MenuPessoa{
 
             Status status = tipoUsuario == 1 ? Status.GERENTE : Status.CLIENTE;
 
-
             String key = Integer.toString(chave);
             PessoaFisica p = new PessoaFisica(chave,nome,cpf,senha,endereco, status);
 

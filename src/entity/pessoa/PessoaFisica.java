@@ -10,6 +10,12 @@ public class PessoaFisica extends Pessoa {
     private String senha;
     private List<Carro> carros = new ArrayList<>();
 
+    public PessoaFisica(int id,String nome, String senha) {
+    	setId(id);
+    	setNome(nome);
+    	this.senha = senha;
+    }
+    
     public PessoaFisica(int id,String nome, String senha, Status status) {
     	setId(id);
     	setNome(nome);
