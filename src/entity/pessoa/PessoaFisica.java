@@ -10,8 +10,7 @@ public class PessoaFisica extends Pessoa {
     private String senha;
     private List<Carro> carros = new ArrayList<>();
 
-    public PessoaFisica(int id,String nome, String senha) {
-    	setId(id);
+    public PessoaFisica(String nome, String senha) {
     	setNome(nome);
     	this.senha = senha;
     }
@@ -54,6 +53,14 @@ public class PessoaFisica extends Pessoa {
 
 	public void setCarro(Carro carro) {
 		this.carros.add(carro);
+	}
+	
+	public boolean equals(PessoaFisica pessoa) {
+		if(pessoa.getNome() == this.getNome() && pessoa.getSenha() == this.getSenha())
+			return true;
+		else
+			return false;
+		
 	}
 
 }

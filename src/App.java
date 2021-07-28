@@ -16,7 +16,7 @@ public class App {
 			Map<String,PessoaFisica> pessoas = new HashMap<String,PessoaFisica>();
 		    MenuApplication menu = new MenuApplication();
 		    LoginApplication login = new LoginApplication();
-	    
+		    
 		    menu.MenuUsuario(entrada, pessoas);
 		    login.telaDeLogin(pessoas, entrada);
 		    
@@ -29,8 +29,6 @@ public class App {
 			entrada.close();
 		}
 		
-	    
-	
-		}
+	}
     
 }
