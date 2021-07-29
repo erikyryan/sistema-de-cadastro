@@ -3,64 +3,53 @@ package entity.pessoa;
 import java.util.ArrayList;
 import java.util.List;
 
-import entity.veiculo.Carro;
+import entity.veiculo.Veiculo;
+
 
 public class PessoaFisica extends Pessoa {
     private String cpf;
     private String senha;
-    private List<Carro> carros = new ArrayList<>();
 
-    public PessoaFisica(String nome, String senha) {
-    	setNome(nome);
-    	this.senha = senha;
-    }
-    
-    public PessoaFisica(int id,String nome, String senha, Status status) {
-    	setId(id);
-    	setNome(nome);
-    	this.senha = senha;
-    	setStatus(status);
-    }
-    
-    public PessoaFisica(int id, String nome, String cpf, String senha,Endereco endereco, Status status) {
-        this.cpf = cpf;
-        this.senha = senha;
-        setStatus(status);
-        setId(id);
-        setNome(nome);
-        setEndereco(endereco);
-    }
+	public PessoaFisica() {
+	}
 
-    public String getSenha() {
-        return this.senha;
-    }
+	public PessoaFisica(String cpf, String senha) {
+		this.cpf = cpf;
+		this.senha = senha;
+	}
 
-    public void setSenha(String senha) {
-        this.senha = senha;
-    }
+	public PessoaFisica(String cpf, String senha, List<Veiculo> veiculos) {
+		this.cpf = cpf;
+		this.senha = senha;
+		this.setVeiculos(veiculos);
+	}
+
+	public PessoaFisica(Integer chave, String nome, String cpf, String senha, Endereco endereco) {
+		this.setId(chave);
+		this.setNome(nome);
+		this.cpf = cpf;
+		this.senha = senha;
+		setEndereco(endereco);
+	}
 
 	public String getCpf() {
-		return cpf;
+		return this.cpf;
 	}
 
 	public void setCpf(String cpf) {
 		this.cpf = cpf;
 	}
 
-	public List<Carro> getCarros() {
-		return carros;
+	public String getSenha() {
+		return this.senha;
 	}
 
-	public void setCarro(Carro carro) {
-		this.carros.add(carro);
-	}
-	
-	public boolean equals(PessoaFisica pessoa) {
-		if(pessoa.getNome() == this.getNome() && pessoa.getSenha() == this.getSenha())
-			return true;
-		else
-			return false;
-		
+	public void setSenha(String senha) {
+		this.senha = senha;
 	}
 
+	@Override
+	public String toString(){
+		return " [ id: " + this.getId() + ",cpf: " + this.getCpf() + ", nome: " + this.getNome() + ", senha: "+ this.getSenha() + ", endereco: " + this.getEndereco().toString() + " ] ";
+	}
 }

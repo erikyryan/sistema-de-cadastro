@@ -1,47 +1,26 @@
 package entity.pessoa;
 
 import java.util.List;
-import entity.veiculo.Carro;
-import entity.veiculo.Caminhao;
+
+import entity.veiculo.Veiculo;
 
 public class PessoaJuridica extends Pessoa{
-    private String CNPJ;
-    private List<Carro> carros;
-    private List<Caminhao> caminhoes;
+    private String cnpj;
 
     public PessoaJuridica() {
     }
 
-    public PessoaJuridica(int id, String nome,String CNPJ, Endereco endereco,Status status) {
-        this.CNPJ = CNPJ;
-        setId(id);
-        setNome(nome);
-        setEndereco(endereco);
-        setStatus(status);
-    }
+    public String getCnpj() {
+		return cnpj;
+	}
 
-    public String getCNPJ() {
-        return this.CNPJ;
-    }
+	public void setCnpj(String cnpj) {
+		this.cnpj = cnpj;
+	}
 
-    public void setCNPJ(String CNPJ) {
-        this.CNPJ = CNPJ;
-        
-    }
+	@Override
+	public String toString(){
+		return " [ id: " + this.getId() + ",cnpj: " + this.getCnpj()+ ", nome: " + this.getNome() + ", senha: "+ this.getSenha() + ", endereco: " + this.getEndereco().toString() + " ] ";
+	}
 
-    public List<Carro> getCarros() {
-        return this.carros;
-    }
-
-    public void setCarros(List<Carro> carros) {
-        this.carros = carros;
-    }
-
-    public List<Caminhao> getCaminhoes() {
-        return this.caminhoes;
-    }
-
-    public void setCaminhoes(List<Caminhao> caminhoes) {
-        this.caminhoes = caminhoes;
-    }
 }

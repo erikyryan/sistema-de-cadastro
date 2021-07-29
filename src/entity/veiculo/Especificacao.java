@@ -41,9 +41,7 @@ public class Especificacao {
 
 	@Override
 	public String toString() {
-		return "Especificacao [modelo=" + modelo + ", cor=" + cor + ", fabricante=" + fabricante + "]";
+		return "[ modelo=" + modelo + ", cor=" + cor + ", fabricante=" + fabricante + " ]";
 	}
 
-    
-    
 }

@@ -1,19 +1,16 @@
 package entity.pessoa;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import entity.veiculo.Veiculo;
+
 public abstract class Pessoa {
     private int id;
     private String nome;
-    private Status status;
+    private String senha;
     private Endereco endereco = new Endereco();
-
-    public Pessoa() {
-    }
-
-    public Pessoa(int id, String nome, Endereco endereco) {
-        this.id = id;
-        this.nome = nome;
-        this.endereco = endereco;
-    }
+    private List<Veiculo> veiculos = new ArrayList<>();
 
     public int getId() {
         return this.id;
@@ -39,14 +36,20 @@ public abstract class Pessoa {
     public void setEndereco(Endereco endereco) {
         this.endereco = endereco;
     }
-
-
-    public Status getStatus() {
-        return this.status;
-    }
-
-    public void setStatus(Status status) {
-        this.status = status;
-    }
     
+    public List<Veiculo> getVeiculos() {
+        return this.veiculos;
+    }
+
+    public void setVeiculos(List<Veiculo> veiculos) {
+        this.veiculos = veiculos;
+    }
+
+    public String getSenha() {
+        return this.senha;
+    }
+
+    public void setSenha(String senha) {
+        this.senha = senha;
+    }
 }

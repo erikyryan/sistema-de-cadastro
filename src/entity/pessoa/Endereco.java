@@ -39,7 +39,7 @@ public class Endereco {
     }
     
     public String toString() {
-    	return "[ Cidade: " + cidade + ", CEP: " + cep + ", Numero: " + numero + "]";
+    	return "[ cidade: " + cidade + ", cep: " + cep + ", numero: " + numero + "]";
     }
 
 }
