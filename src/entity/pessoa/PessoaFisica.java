@@ -24,12 +24,13 @@ public class PessoaFisica extends Pessoa {
 		this.setVeiculos(veiculos);
 	}
 
-	public PessoaFisica(Integer chave, String nome, String cpf, String senha, Endereco endereco) {
+	public PessoaFisica(Integer chave, String nome, String cpf, String senha, Endereco endereco, List<Veiculo> veiculos) {
 		this.setId(chave);
 		this.setNome(nome);
 		this.cpf = cpf;
 		this.senha = senha;
 		setEndereco(endereco);
+		this.setVeiculos(veiculos);
 	}
 
 	public String getCpf() {

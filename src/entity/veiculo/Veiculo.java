@@ -1,18 +1,26 @@
 package entity.veiculo;
 
-public abstract class Veiculo {
+public class Veiculo {
 
-    private int id;
     private TipoDeVeiculo tipo;
     private Especificacao especificacao = new Especificacao(); 
 
-    public int getId() {
-        return this.id;
+    public Veiculo( TipoDeVeiculo tipo, String modelo, String cor, String fabricante) {
+		super();
+		this.tipo = tipo;
+		this.especificacao.setModelo(modelo);
+		this.especificacao.setCor(cor);
+		this.especificacao.setFabricante(fabricante);
+	}
+    
+    public Veiculo() {
+    	
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
+	public Veiculo(int id, TipoDeVeiculo tipo, Especificacao especificacao) {
+		this.tipo = tipo;
+		this.especificacao = especificacao;
+	}
 
     public Especificacao getEspecificacao() {
         return this.especificacao;
@@ -32,7 +40,7 @@ public abstract class Veiculo {
 
     @Override
     public String toString() {
-        return "[ ID: " + this.id + ", tipo de veiculo: " + this.tipo + ", especificacao: " + especificacao.toString() + " ]";
+        return "[ tipo de veiculo: " + this.tipo + ", especificacao: " + especificacao.toString() + " ]";
     }
 
 }

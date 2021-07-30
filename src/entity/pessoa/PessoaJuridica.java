@@ -6,21 +6,63 @@ import entity.veiculo.Veiculo;
 
 public class PessoaJuridica extends Pessoa{
     private String cnpj;
+	private String senha;
+	
 
-    public PessoaJuridica() {
-    }
+	public PessoaJuridica() {
+	}
 
-    public String getCnpj() {
-		return cnpj;
+	public PessoaJuridica(String cnpj, String senha) {
+		this.cnpj = cnpj;
+		this.senha = senha;
+	}
+	public PessoaJuridica(String cnpj, String senha, List<Veiculo> veiculos) {
+		this.cnpj = cnpj;
+		this.senha = senha;
+		this.setVeiculos(veiculos);
+	}
+
+	public PessoaJuridica(Integer chave, String nome, String cnpj, String senha, Endereco endereco, List<Veiculo> veiculos) {
+		this.setId(chave);
+		this.setNome(nome);
+		this.cnpj = cnpj;
+		this.senha = senha;
+		setEndereco(endereco);
+		this.setVeiculos(veiculos);
+	}
+
+
+	public String getCnpj() {
+		return this.cnpj;
 	}
 
 	public void setCnpj(String cnpj) {
 		this.cnpj = cnpj;
 	}
 
+	public String getSenha() {
+		return this.senha;
+	}
+
+	public void setSenha(String senha) {
+		this.senha = senha;
+	}
+
+	public PessoaJuridica cnpj(String cnpj) {
+		setCnpj(cnpj);
+		return this;
+	}
+
+	public PessoaJuridica senha(String senha) {
+		setSenha(senha);
+		return this;
+	}
+
+
 	@Override
 	public String toString(){
-		return " [ id: " + this.getId() + ",cnpj: " + this.getCnpj()+ ", nome: " + this.getNome() + ", senha: "+ this.getSenha() + ", endereco: " + this.getEndereco().toString() + " ] ";
+		return " [ id: " + this.getId() + ",cnpj: " + this.getCnpj()+ ", nome: " + this.getNome() + ", senha: "
+	+ this.getSenha() + ", endereco: " + this.getEndereco().toString() + " ] ";
 	}
 
 }
