@@ -11,10 +11,10 @@ import entity.pessoa.PessoaJuridica;
 import entity.veiculo.TipoDeVeiculo;
 import entity.veiculo.Veiculo;
 
-public class MenuPessoasImpl implements MenuPessoas{
+public class MenuPessoasImpl implements MenuPessoas {
 
     @Override
-    public void remover(Map<String,PessoaFisica> pessoasFisicas, Map<String,PessoaJuridica> pessoasJuridicas, Scanner entrada, int user) {
+    public void remover(Map<String,PessoaFisica> pessoasFisicas, Map<String,PessoaJuridica> pessoasJuridicas, Scanner entrada, int user){
     	try {
 	        int opc;
 	        do{
@@ -32,7 +32,7 @@ public class MenuPessoasImpl implements MenuPessoas{
 	            	pessoasJuridicas.remove(verificarChave);
 	                System.out.println("[SUCESSO]: Pessoa Juridica removido!");
 	            }else {
-	            	throw new RuntimeException();
+	            	throw new Exception();
 	            }
 	
 	            System.out.println("Deseja continuar removendo? (0 - Sim, 1 - Nao)");
@@ -47,7 +47,7 @@ public class MenuPessoasImpl implements MenuPessoas{
     }
 
     @Override
-    public void exibir(Map<String,PessoaFisica> pessoasFisicas, Map<String,PessoaJuridica> pessoasJuridicas, Scanner entrada, int user) {
+    public void exibir(Map<String,PessoaFisica> pessoasFisicas, Map<String,PessoaJuridica> pessoasJuridicas, Scanner entrada, int user){
     	try {
 	    	if(user == 1){
 	    		for(String chave :pessoasFisicas.keySet()){
@@ -60,7 +60,7 @@ public class MenuPessoasImpl implements MenuPessoas{
 	    			System.out.println("Chave: " + chave + " | " + pessoaJuridica.toString());
 	    		}
 	        }else{
-	        	throw new RuntimeException();
+	        	throw new Exception();
 	        }
     	}catch(Exception e){
     		System.err.println(e.toString());
@@ -69,7 +69,7 @@ public class MenuPessoasImpl implements MenuPessoas{
     }
 
     @Override
-    public void adicionar(Map<String,PessoaFisica> pessoasFisicas, Map<String,PessoaJuridica> pessoasJuridicas, Scanner entrada, int user) {
+    public void adicionar(Map<String,PessoaFisica> pessoasFisicas, Map<String,PessoaJuridica> pessoasJuridicas, Scanner entrada, int user){
         try {
 	    	int opc = 0;
 	    	
@@ -97,7 +97,7 @@ public class MenuPessoasImpl implements MenuPessoas{
 	            	 PessoaJuridica pessoaJuridica = new PessoaJuridica(chave, nome, identificacao, senha, endereco, veiculos);
 	            	 pessoasJuridicas.put(id, pessoaJuridica);
 	            }else {
-	            	throw new RuntimeException();
+	            	throw new Exception();
 	            }
 	
 	            System.out.println("Deseja continuar um usuário armazenando? (0 - Sim, 1 - Nao)");
@@ -125,7 +125,7 @@ public class MenuPessoasImpl implements MenuPessoas{
     }
 
     @Override
-    public void verificar(Map<String,PessoaFisica> pessoasFisicas, Map<String,PessoaJuridica> pessoasJuridicas, Scanner entrada, int user) {
+    public void verificar(Map<String,PessoaFisica> pessoasFisicas, Map<String,PessoaJuridica> pessoasJuridicas, Scanner entrada, int user){
         try {
 	    	int opc = 0;
 	        do{
@@ -141,7 +141,7 @@ public class MenuPessoasImpl implements MenuPessoas{
 	            	if(pessoasJuridicas.containsKey(verificarChave))
 	            		System.out.println("[SUCESSO]: Pessoa Juridica cadastrada!");
 	            }else{
-	            	throw new RuntimeException();
+	            	throw new Exception();
 	            }
 	            System.out.println("Deseja continuar verificando se ha uma pessoa? (0 - Sim, 1 - Nao)");
 	            opc = entrada.nextInt();
@@ -164,7 +164,7 @@ public class MenuPessoasImpl implements MenuPessoas{
 	            String cnpj = entrada.nextLine();
 	            return cnpj;	
 	        }else {  
-	            throw new RuntimeException();
+	            throw new Exception();
 	        }
 	    }catch(Exception e) {
         	System.err.println(e.toString());
@@ -173,7 +173,7 @@ public class MenuPessoasImpl implements MenuPessoas{
         return null;
     }
 
-    private List<Veiculo> adicionarVeiculo(Scanner entrada) {
+    private List<Veiculo> adicionarVeiculo(Scanner entrada){
         List<Veiculo> veiculos = new ArrayList<>();
     	try {
         	int opc;

@@ -12,7 +12,7 @@ import menu.MenuPessoasImpl;
 public class MenuApplication {
 	public static MenuPessoasImpl menuPessoas = new MenuPessoasImpl();
 	
-	public void MenuUsuario(Map<String,PessoaFisica> pessoasFisicas, Map<String,PessoaJuridica> pessoasJuridicas, Scanner entrada) throws Exception{
+	public void MenuUsuario(Map<String,PessoaFisica> pessoasFisicas, Map<String,PessoaJuridica> pessoasJuridicas, Scanner entrada) throws Exception {
 	    int opc;
 	    try {
 		    do{
@@ -22,7 +22,7 @@ public class MenuApplication {
 		        entrada.nextLine();
 		        
 		    	if(user > 2 || user < 1) {
-		    		throw new RuntimeException();
+		    		throw new Exception();
 		    		
 		    	}else if(user == 1 && pessoasFisicas.isEmpty()) {
 		    		System.out.println("[ALERTA]: Nao ha usuarios cadastrados! Primeiro cadastre um usuario!");
