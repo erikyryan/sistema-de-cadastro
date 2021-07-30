@@ -1,6 +1,5 @@
   
 import java.util.HashMap;
-import java.util.InputMismatchException;
 import java.util.Map;
 import java.util.Scanner;
 
@@ -19,11 +18,8 @@ public class App {
 		    
 		    menu.MenuUsuario( pessoasFisicas,pessoasJuridicas, entrada);
 		    
-		}catch(InputMismatchException e) {
-			System.err.println("[ERROR]: " + e.toString());			
-			e.printStackTrace();
 		}catch(Exception e) {
-			System.err.println("[ERROR]: " + e.toString());			
+			System.err.println(e.toString());			
 			e.printStackTrace();
 		}finally {
 			entrada.close();

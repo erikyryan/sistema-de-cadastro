@@ -1,10 +1,8 @@
 package entity.pessoa;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import entity.veiculo.Veiculo;
-
 
 public class PessoaFisica extends Pessoa {
     private String cpf;
