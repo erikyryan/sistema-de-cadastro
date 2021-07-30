@@ -13,16 +13,18 @@ public class App {
 	    Scanner entrada = new Scanner(System.in);
 		
 	    try {
-			Map<String,PessoaFisica> pessoas = new HashMap<String,PessoaFisica>();
+			Map<String,PessoaFisica> pessoasFisicas = new HashMap<String,PessoaFisica>();
+			Map<String,PessoaJuridica> pessoasJuridicas = new HashMap<String,PessoaJuridica>();
 		    MenuApplication menu = new MenuApplication();
 		    
-		    //menu.MenuUsuario( pessoas, entrada);
+		    menu.MenuUsuario( pessoasFisicas,pessoasJuridicas, entrada);
 		    
 		}catch(InputMismatchException e) {
-			System.err.println("[ERROR]: Falha ao passar os dados para o scanner");			
+			System.err.println("[ERROR]: " + e.toString());			
 			e.printStackTrace();
 		}catch(Exception e) {
-			e.printStackTrace(); // imprime o erro da excecao em formato de pilha
+			System.err.println("[ERROR]: " + e.toString());			
+			e.printStackTrace();
 		}finally {
 			entrada.close();
 		}
