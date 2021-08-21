@@ -7,10 +7,9 @@
 <BorderPane xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.TelaController">
    <center>
       <AnchorPane prefHeight="537.0" prefWidth="603.0" BorderPane.alignment="CENTER">
-         <children>
+        <children>
             <Button fx:id="pessoaFisica" layoutX="151.0" layoutY="217.0" mnemonicParsing="false" onAction="#acaoPessoaFisica" prefHeight="82.0" prefWidth="100.0" text="Pessoa Física" />
-            <Button fx:id="pessoaJuridica" layoutX="346.0" layoutY="217.0" mnemonicParsing="false" onAction="#acaoPessoaJuridica" prefHeight="80.0" prefWidth="109.0" text="Pessoa Juridica" />
-         </children>
+        </children>
       </AnchorPane>
    </center>
 </BorderPane>
