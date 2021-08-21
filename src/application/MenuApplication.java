@@ -1,4 +1,4 @@
-package api;
+package application;
 
 import java.util.InputMismatchException;
 import java.util.Map;
