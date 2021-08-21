@@ -16,19 +16,13 @@ public class PessoaJuridica extends Pessoa{
 		this.cnpj = cnpj;
 		this.senha = senha;
 	}
-	public PessoaJuridica(String cnpj, String senha, List<Veiculo> veiculos) {
-		this.cnpj = cnpj;
-		this.senha = senha;
-		this.setVeiculos(veiculos);
-	}
 
-	public PessoaJuridica(Integer chave, String nome, String cnpj, String senha, Endereco endereco, List<Veiculo> veiculos) {
+	public PessoaJuridica(Integer chave, String nome, String cnpj, String senha, Endereco endereco) {
 		this.setId(chave);
 		this.setNome(nome);
 		this.cnpj = cnpj;
 		this.senha = senha;
 		setEndereco(endereco);
-		this.setVeiculos(veiculos);
 	}
 
 
