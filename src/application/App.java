@@ -11,33 +11,20 @@ import javafx.stage.Stage;
 public class App extends Application{
 	
 	@Override
-	public void start(Stage primaryStage) throws IOException {
-		Pane root = FXMLLoader.load(getClass().getResource("Tela.fxml"));
-		
-		Scene scene = new Scene(root,300,300);
-		primaryStage.setScene(scene);
-		primaryStage.show();
+	public void start(Stage primaryStage) {
+		try {
+			BorderPane root = (BorderPane)FXMLLoader.load(getClass().getResource("Tela.fxml"));
+			Scene scene = new Scene(root);
+			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+			primaryStage.setScene(scene);
+			primaryStage.show();
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
 	}
 	
-	public static void main(String[] args) throws Exception {
+	public static void main(String[] args) {
 		launch(args);
 	}
 
-}
-
-//	    Scanner entrada = new Scanner(System.in);
-
-//	    try {
-//			Map<String,PessoaFisica> pessoasFisicas = new HashMap<String,PessoaFisica>();
-//			Map<String,PessoaJuridica> pessoasJuridicas = new HashMap<String,PessoaJuridica>();
-//		    MenuApplication menu = new MenuApplication();
-//		    
-//		    menu.MenuUsuario( pessoasFisicas,pessoasJuridicas, entrada);
-//		    
-//		}catch(Exception e) {
-//			System.err.println(e.toString());			
-//			e.printStackTrace();
-//		}finally {
-//			entrada.close();
-//		}
-		
+}	
