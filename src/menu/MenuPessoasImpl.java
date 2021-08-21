@@ -89,12 +89,11 @@ public class MenuPessoasImpl implements MenuPessoas {
 	            
 	            String identificacao = tipoDeUsuario(entrada,user);
 	            
-	            List<Veiculo> veiculos = adicionarVeiculo(entrada);
 	            if(user == 1) {
-		           PessoaFisica pessoaFisica = new PessoaFisica(chave, nome, identificacao, senha, endereco, veiculos);
+		           PessoaFisica pessoaFisica = new PessoaFisica(chave, nome, identificacao, senha, endereco);
 		           pessoasFisicas.put(id, pessoaFisica);
 	            }else if (user == 2) {
-	            	 PessoaJuridica pessoaJuridica = new PessoaJuridica(chave, nome, identificacao, senha, endereco, veiculos);
+	            	 PessoaJuridica pessoaJuridica = new PessoaJuridica(chave, nome, identificacao, senha, endereco);
 	            	 pessoasJuridicas.put(id, pessoaJuridica);
 	            }else {
 	            	throw new Exception();
