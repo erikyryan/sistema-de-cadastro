@@ -27,14 +27,12 @@ public class App extends Application{
 	public Scene TelaPrincipal(Stage stage) throws IOException {
 		BorderPane root = (BorderPane)FXMLLoader.load(getClass().getResource("../view/TelaPrincipal.fxml"));
 		Scene scene = new Scene(root);
-		scene.getStylesheets().add(getClass().getResource("../view/application.css").toExternalForm());
 		return scene;
 	}
 	
 	public Scene TelaPessoaFisica(Stage stage) throws IOException {
 		BorderPane root = (BorderPane)FXMLLoader.load(getClass().getResource("../view/TelaPessoaFisica.fxml"));
 		Scene scene = new Scene(root);
-		scene.getStylesheets().add(getClass().getResource("../view/application.css").toExternalForm());
 		return scene;
 		
 	}
@@ -42,7 +40,6 @@ public class App extends Application{
 	public Scene TelaPessoaJuridica(Stage stage) throws IOException {
 		BorderPane root = (BorderPane)FXMLLoader.load(getClass().getResource("../view/TelaPessoaJuridica.fxml"));
 		Scene scene = new Scene(root);
-		scene.getStylesheets().add(getClass().getResource("../view/application.css").toExternalForm());
 		return scene;
 	}
 	
