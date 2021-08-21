@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 
@@ -10,9 +8,8 @@
    <center>
       <AnchorPane prefHeight="537.0" prefWidth="603.0" BorderPane.alignment="CENTER">
          <children>
-            <Button fx:id="botao" layoutX="276.0" layoutY="441.0" mnemonicParsing="false" onAction="#botaoApertado" text="Button" />
-            <Label fx:id="labelNome" layoutX="164.0" layoutY="168.0" prefHeight="17.0" prefWidth="53.0" text="Nome:" />
-            <TextField fx:id="TextFieldNome" layoutX="217.0" layoutY="164.0" onAction="#botaoApertado" />
+            <Button fx:id="pessoaFisica" layoutX="151.0" layoutY="217.0" mnemonicParsing="false" onAction="#acaoPessoaFisica" prefHeight="82.0" prefWidth="100.0" text="Pessoa Física" />
+            <Button fx:id="pessoaJuridica" layoutX="346.0" layoutY="217.0" mnemonicParsing="false" onAction="#acaoPessoaJuridica" prefHeight="80.0" prefWidth="109.0" text="Pessoa Juridica" />
          </children>
       </AnchorPane>
    </center>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.TelaFisicaController">
+   <center>
+      <AnchorPane prefHeight="537.0" prefWidth="603.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="pessoaJuridica" layoutX="247.0" layoutY="391.0" mnemonicParsing="false" onAction="#acaoPessoaJuridica" prefHeight="80.0" prefWidth="109.0" text="Pessoa Juridica" />
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>

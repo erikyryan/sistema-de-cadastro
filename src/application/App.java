@@ -1,5 +1,7 @@
 package application;
 
+import java.io.IOException;
+
 import javafx.application.Application;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
@@ -9,13 +11,9 @@ import javafx.fxml.FXMLLoader;
 public class App extends Application{
 	
 	@Override
-	public void start(Stage primaryStage) {
+	public void start(Stage stage) {
 		try {
-			BorderPane root = (BorderPane)FXMLLoader.load(getClass().getResource("../view/Tela.fxml"));
-			Scene scene = new Scene(root);
-			scene.getStylesheets().add(getClass().getResource("../view/application.css").toExternalForm());
-			primaryStage.setScene(scene);
-			primaryStage.show();
+			TelaPrincipal(stage);
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
@@ -25,4 +23,20 @@ public class App extends Application{
 		launch(args);
 	}
 
+	public void TelaPrincipal(Stage stage) throws IOException {
+		BorderPane root = (BorderPane)FXMLLoader.load(getClass().getResource("../view/TelaPrincipal.fxml"));
+		Scene scene = new Scene(root);
+		scene.getStylesheets().add(getClass().getResource("../view/application.css").toExternalForm());
+		stage.setScene(scene);
+		stage.show();
+	}
+	
+	public Scene TelaPessoaFisica(Stage stage) throws IOException {
+		BorderPane root = (BorderPane)FXMLLoader.load(getClass().getResource("../view/TelaPessoaFisica.fxml"));
+		Scene scene = new Scene(root);
+		scene.getStylesheets().add(getClass().getResource("../view/application.css").toExternalForm());
+		return scene;
+		
+	}
+	
 }	

@@ -1,41 +1,52 @@
 package controller;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+
+import application.App;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.BorderPane;
+import javafx.stage.Stage;
+import menu.MenuPessoasImpl;
 
 public class TelaController implements Initializable{
 
+	public static MenuPessoasImpl menuPessoas = new MenuPessoasImpl();
+	App app = new App();
+	
+	Stage stage = new Stage();
+	
     @FXML
     private ResourceBundle resources;
 
     @FXML
-    private URL location;
+    private Button pessoaFisica;
 
     @FXML
-    private Button botao;
+    private Button pessoaJuridica;
 
     @FXML
-    private Label labelNome;
-
-    @FXML
-    private TextField TextFieldNome;
-
-    @FXML
-    void botaoApertado(ActionEvent event) {
-
+    void acaoPessoaFisica(ActionEvent event) throws IOException {
+    	
+    	Scene scene = app.TelaPessoaFisica(stage);
+		
+    	Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+		stage.setScene(scene);
+		stage.show();
     }
 
-    @FXML
-    void initialize() {
-        assert botao != null : "fx:id=\"botao\" was not injected: check your FXML file 'Tela.fxml'.";
-        assert labelNome != null : "fx:id=\"labelNome\" was not injected: check your FXML file 'Tela.fxml'.";
-        assert TextFieldNome != null : "fx:id=\"TextFieldNome\" was not injected: check your FXML file 'Tela.fxml'.";
+	@FXML
+    void acaoPessoaJuridica(ActionEvent event) {
 
     }
 
