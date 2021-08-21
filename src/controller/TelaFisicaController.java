@@ -67,6 +67,22 @@ public class TelaFisicaController implements Initializable{
     private Button delete;
 
     @FXML
+    void Adicionando(ActionEvent event) {
+    	System.out.println("adicionando!");
+    }
+
+    @FXML
+    void Alterando(ActionEvent event) {
+    	System.out.println("alterando!");
+    }
+
+    @FXML
+    void Deletando(ActionEvent event) {
+    	System.out.println("deletando!");
+
+    }
+    
+    @FXML
     void acaoTelaPrincipal(ActionEvent event) throws IOException {
     	Scene scene = app.TelaPrincipal(stage);
     	Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();

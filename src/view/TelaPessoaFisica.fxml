@@ -22,9 +22,9 @@
             <TextField fx:id="TextFieldCEP" layoutX="333.0" layoutY="135.0" prefHeight="25.0" prefWidth="90.0" />
             <Label fx:id="labelNumero" layoutX="302.0" layoutY="179.0" prefHeight="24.0" prefWidth="65.0" text="Número:" />
             <TextField fx:id="TextFieldNumero" layoutX="355.0" layoutY="179.0" prefHeight="25.0" prefWidth="69.0" />
-            <Button fx:id="adicionar" layoutX="445.0" layoutY="90.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="93.0" text="Adicionar" />
-            <Button fx:id="alterar" layoutX="445.0" layoutY="135.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="93.0" text="Alterar" />
-            <Button fx:id="delete" layoutX="446.0" layoutY="179.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="92.0" text="Deletar" />
+            <Button fx:id="adicionar" layoutX="445.0" layoutY="90.0" mnemonicParsing="false" onAction="#Adicionando" prefHeight="25.0" prefWidth="93.0" text="Adicionar" />
+            <Button fx:id="alterar" layoutX="445.0" layoutY="135.0" mnemonicParsing="false" onAction="#Alterando" prefHeight="25.0" prefWidth="93.0" text="Alterar" />
+            <Button fx:id="delete" layoutX="446.0" layoutY="179.0" mnemonicParsing="false" onAction="#Deletando" prefHeight="25.0" prefWidth="92.0" text="Deletar" />
          </children>
       </AnchorPane>
    </center>
