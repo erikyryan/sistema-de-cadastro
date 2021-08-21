@@ -2,9 +2,12 @@ package controller;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.ResourceBundle;
 
 import application.App;
+import entity.pessoa.PessoaFisica;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.event.ActionEvent;
@@ -21,11 +24,19 @@ public class TelaFisicaController implements Initializable{
 	Stage stage = new Stage();
 	App app = new App();
 	
+	Map<String,PessoaFisica> pessoas = new HashMap<String,PessoaFisica>();
+	
 	@FXML
     private Button telaPrincipal;
 
 	@FXML
     private Button pessoaJuridica;
+	
+	@FXML
+    private Label labelID;
+
+	@FXML
+	private TextField TextFieldID;
 
 	@FXML
     private Label labelName;
@@ -52,6 +63,12 @@ public class TelaFisicaController implements Initializable{
 	private TextField TextFieldCEP;
 
     @FXML
+    private Label labelCPF;
+
+    @FXML
+    private TextField TextFieldCPF;
+    
+    @FXML
     private Label labelNumero;
 
     @FXML
@@ -68,12 +85,34 @@ public class TelaFisicaController implements Initializable{
 
     @FXML
     void Adicionando(ActionEvent event) {
-    	System.out.println("adicionando!");
+    	PessoaFisica pessoa = new PessoaFisica();
+    	pessoa.setId((String)TextFieldID.getText());
+    	pessoa.setNome((String) TextFieldName.getText());
+    	pessoa.setCpf((String) TextFieldCPF.getText());
+    	pessoa.setEndereco((String) TextFieldCidade.getText(),
+    			(String) TextFieldCEP.getText(), (String) TextFieldNumero.getText());
+    	pessoa.setSenha((String) TextFieldSenha.getText());
+    	
+    	setPessoaFisica(pessoa);
+    	
+    	System.out.println(pessoa.toString());
+    	
     }
 
     @FXML
     void Alterando(ActionEvent event) {
-    	System.out.println("alterando!");
+    	if(pessoas.containsKey((String) TextFieldID.getText())){
+    		PessoaFisica pessoa = new PessoaFisica();
+        	pessoa.setNome((String) TextFieldName.getText());
+        	pessoa.setCpf((String) TextFieldCPF.getText());
+        	pessoa.setEndereco((String) TextFieldCidade.getText(),
+        			(String) TextFieldCEP.getText(), (String) TextFieldNumero.getText());
+        	pessoa.setSenha((String) TextFieldSenha.getText());
+        	
+        	setPessoaFisica(pessoa);
+    	}else {
+    		System.out.println("[ERROR]: Pessoa não encontrada");
+    	}
     }
 
     @FXML
@@ -103,5 +142,9 @@ public class TelaFisicaController implements Initializable{
 		// TODO Auto-generated method stub
 		
 	}
-   
+	
+   public Map<String,PessoaFisica> setPessoaFisica(PessoaFisica pessoaFisica) {
+	   pessoas.put(pessoaFisica.getId(), pessoaFisica);
+	   return pessoas;
+   }
 }

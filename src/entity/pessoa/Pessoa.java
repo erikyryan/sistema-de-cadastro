@@ -1,16 +1,16 @@
 package entity.pessoa;
 
 public abstract class Pessoa {
-    private int id;
+    private String id;
     private String nome;
     private String senha;
     private Endereco endereco = new Endereco();
 
-    public int getId() {
+    public String getId() {
         return this.id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -27,8 +27,8 @@ public abstract class Pessoa {
         return this.endereco;
     }
 
-    public void setEndereco(Endereco endereco) {
-        this.endereco = endereco;
+    public void setEndereco(String cidade, String cep, String numero) {
+        this.endereco = new Endereco(cidade,cep,numero);
     }
 
     public String getSenha() {

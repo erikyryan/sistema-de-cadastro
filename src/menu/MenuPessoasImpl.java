@@ -70,58 +70,57 @@ public class MenuPessoasImpl implements MenuPessoas {
 
     @Override
     public void adicionar(Map<String,PessoaFisica> pessoasFisicas, Map<String,PessoaJuridica> pessoasJuridicas, Scanner entrada, int user){
-        try {
-	    	int opc = 0;
-	    	
-	        do{
-	            System.out.println("Digite a chave do usuario:");
-	            Integer chave = entrada.nextInt();
-	            entrada.nextLine();
-	            String id = Integer.toString(chave);
-	
-	            System.out.println("Digite o nome do usuario:");
-	            String nome = entrada.nextLine();
-	
-	            System.out.println("Digite sua senha: ");
-	            String senha = entrada.nextLine();
-	
-	            Endereco endereco = cadastrarEndereco(entrada);
-	            
-	            String identificacao = tipoDeUsuario(entrada,user);
-	            
-	            if(user == 1) {
-		           PessoaFisica pessoaFisica = new PessoaFisica(chave, nome, identificacao, senha, endereco);
-		           pessoasFisicas.put(id, pessoaFisica);
-	            }else if (user == 2) {
-	            	 PessoaJuridica pessoaJuridica = new PessoaJuridica(chave, nome, identificacao, senha, endereco);
-	            	 pessoasJuridicas.put(id, pessoaJuridica);
-	            }else {
-	            	throw new Exception();
-	            }
-	
-	            System.out.println("Deseja continuar um usuário armazenando? (0 - Sim, 1 - Nao)");
-	            opc = entrada.nextInt();
-	            entrada.nextLine();
-	        }while(opc != 1);
+//        try {
+////	    	int opc = 0;
+////	    	
+////	        do{
+////	            System.out.println("Digite a chave do usuario:");
+////	            String id = entrada.nextLine();
+////	            entrada.nextLine();
+////	
+////	            System.out.println("Digite o nome do usuario:");
+////	            String nome = entrada.nextLine();
+////	
+////	            System.out.println("Digite sua senha: ");
+////	            String senha = entrada.nextLine();
+////	
+////	            Endereco endereco = cadastrarEndereco(entrada);
+////	            
+////	            String identificacao = tipoDeUsuario(entrada,user);
+//	            
+//	            if(user == 1) {
+//		           PessoaFisica pessoaFisica = new PessoaFisica(id, nome, identificacao, senha, , cidade, String cep, String numero);
+//		           pessoasFisicas.put(id, pessoaFisica);
+//	            }else if (user == 2) {
+////	            	 PessoaJuridica pessoaJuridica = new PessoaJuridica(id, nome, identificacao, senha, endereco);
+////	            	 pessoasJuridicas.put(id, pessoaJuridica);
+//	            }else {
+//	            	throw new Exception();
+//	            }
+//	
+//	            System.out.println("Deseja continuar um usuário armazenando? (0 - Sim, 1 - Nao)");
+//	            opc = entrada.nextInt();
+//	            entrada.nextLine();
+//	        }while(opc != 1);
 	        
-        }catch(Exception e) {
-        	System.err.println(e.toString());
-        }
+//        }catch(Exception e) {
+//        	System.err.println(e.toString());
+//        }
         
     }
 
-    private Endereco cadastrarEndereco(Scanner entrada){
-        System.out.println("Digite sua cidade:");
-        String cidade = entrada.nextLine();
-
-        System.out.println("Digite o CEP da sua cidade:");
-        String cep = entrada.nextLine();
-
-        System.out.println("Digite o numero da sua casa:");
-        String numero = entrada.nextLine();
-
-        return new Endereco(cidade,cep,numero);
-    }
+//    private Endereco cadastrarEndereco(Scanner entrada){
+//        System.out.println("Digite sua cidade:");
+//        String cidade = entrada.nextLine();
+//
+//        System.out.println("Digite o CEP da sua cidade:");
+//        String cep = entrada.nextLine();
+//
+//        System.out.println("Digite o numero da sua casa:");
+//        String numero = entrada.nextLine();
+//
+//        return new Endereco(cidade,cep,numero);
+//    }
 
     @Override
     public void verificar(Map<String,PessoaFisica> pessoasFisicas, Map<String,PessoaJuridica> pessoasJuridicas, Scanner entrada, int user){

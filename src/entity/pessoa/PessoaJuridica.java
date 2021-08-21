@@ -1,9 +1,5 @@
 package entity.pessoa;
 
-import java.util.List;
-
-import entity.veiculo.Veiculo;
-
 public class PessoaJuridica extends Pessoa{
     private String cnpj;
 	private String senha;
@@ -17,12 +13,12 @@ public class PessoaJuridica extends Pessoa{
 		this.senha = senha;
 	}
 
-	public PessoaJuridica(Integer chave, String nome, String cnpj, String senha, Endereco endereco) {
+	public PessoaJuridica(String chave, String nome, String cnpj, String senha, String cidade, String cep, String numero) {
 		this.setId(chave);
 		this.setNome(nome);
 		this.cnpj = cnpj;
 		this.senha = senha;
-		setEndereco(endereco);
+		setEndereco(cidade,cep,numero);
 	}
 
 
