@@ -13,7 +13,8 @@ public class App extends Application{
 	@Override
 	public void start(Stage stage) {
 		try {
-			TelaPrincipal(stage);
+			stage.setScene(TelaPrincipal(stage));
+			stage.show();
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
@@ -23,12 +24,11 @@ public class App extends Application{
 		launch(args);
 	}
 
-	public void TelaPrincipal(Stage stage) throws IOException {
+	public Scene TelaPrincipal(Stage stage) throws IOException {
 		BorderPane root = (BorderPane)FXMLLoader.load(getClass().getResource("../view/TelaPrincipal.fxml"));
 		Scene scene = new Scene(root);
 		scene.getStylesheets().add(getClass().getResource("../view/application.css").toExternalForm());
-		stage.setScene(scene);
-		stage.show();
+		return scene;
 	}
 	
 	public Scene TelaPessoaFisica(Stage stage) throws IOException {
@@ -37,6 +37,13 @@ public class App extends Application{
 		scene.getStylesheets().add(getClass().getResource("../view/application.css").toExternalForm());
 		return scene;
 		
+	}
+	
+	public Scene TelaPessoaJuridica(Stage stage) throws IOException {
+		BorderPane root = (BorderPane)FXMLLoader.load(getClass().getResource("../view/TelaPessoaJuridica.fxml"));
+		Scene scene = new Scene(root);
+		scene.getStylesheets().add(getClass().getResource("../view/application.css").toExternalForm());
+		return scene;
 	}
 	
 }	
