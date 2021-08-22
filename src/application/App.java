@@ -34,8 +34,9 @@ public class App extends Application{
 	public Scene TelaPrincipal(Sistema sistema) throws IOException {
 		BorderPane root = (BorderPane)FXMLLoader.load(getClass().getResource("../view/TelaPrincipal.fxml"));
 		this.sistema = sistema;
-		Scene scene = new Scene(root);
-		return scene;
+		sistema.scene = new Scene(root);
+		
+		return sistema.scene;
 	}
 	
 	public Scene TelaPessoaFisica(Sistema sistema) throws IOException {

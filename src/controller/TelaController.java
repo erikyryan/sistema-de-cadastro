@@ -10,7 +10,6 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
@@ -30,18 +29,18 @@ public class TelaController implements Initializable{
 
     @FXML
     void acaoPessoaFisica(ActionEvent event) throws IOException {
-    	Scene scene = app.TelaPessoaFisica(sistema);
-    	Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-		stage.setScene(scene);
-		stage.show();
+    	sistema.scene = app.TelaPessoaFisica(sistema);
+    	sistema.stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+    	sistema.stage.setScene(sistema.scene);
+    	sistema.stage.show();
     }
 
 	@FXML
     void acaoPessoaJuridica(ActionEvent event) throws IOException {
-		Scene scene = app.TelaPessoaJuridica(sistema);
-    	Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-		stage.setScene(scene);
-		stage.show();
+		sistema.scene = app.TelaPessoaJuridica(sistema);
+		sistema.stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+		sistema.stage.setScene(sistema.scene);
+		sistema.stage.show();
     }
 
 	@Override

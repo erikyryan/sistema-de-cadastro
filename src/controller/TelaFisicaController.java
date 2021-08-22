@@ -95,10 +95,7 @@ public class TelaFisicaController implements Initializable{
     			(String) TextFieldCEP.getText(), (String) TextFieldNumero.getText());
     	pessoa.setSenha((String) TextFieldSenha.getText());
     	
-    	setPessoaFisica(pessoa);
-    	
-    	System.out.println(pessoa.toString());
-    	
+    	sistema.savePessoaFisica(pessoa);
     }
 
     @FXML
@@ -111,7 +108,7 @@ public class TelaFisicaController implements Initializable{
         			(String) TextFieldCEP.getText(), (String) TextFieldNumero.getText());
         	pessoa.setSenha((String) TextFieldSenha.getText());
         	
-        	setPessoaFisica(pessoa);
+        	sistema.savePessoaFisica(pessoa);
     	}else {
     		System.out.println("[ERROR]: Pessoa não encontrada");
     	}
@@ -145,8 +142,9 @@ public class TelaFisicaController implements Initializable{
 		
 	}
 	
-   public Map<String,PessoaFisica> setPessoaFisica(PessoaFisica pessoaFisica) {
-	   pessoas.put(pessoaFisica.getId(), pessoaFisica);
-	   return pessoas;
-   }
+//   public Map<String,PessoaFisica> setPessoaFisica(PessoaFisica pessoaFisica) {
+//	   pessoas.put(pessoaFisica.getId(), pessoaFisica);
+//	   sistema.savePessoaFisica(pessoaFisica);
+//	   return pessoas;
+//   }
 }

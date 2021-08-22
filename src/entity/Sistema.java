@@ -6,12 +6,11 @@ import java.util.Map;
 import entity.pessoa.PessoaFisica;
 import entity.pessoa.PessoaJuridica;
 import javafx.scene.Scene;
-import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
 public class Sistema {
-	public Stage stage = new Stage();
-	public Scene scene = new Scene(null);
+	public Stage stage;
+	public Scene scene;
 	public Map<String, PessoaFisica> pessoasFisica = new HashMap<String,PessoaFisica>();
 	public Map<String, PessoaJuridica> pessoasJuridica = new HashMap<String,PessoaJuridica>();
 	
@@ -39,6 +38,25 @@ public class Sistema {
 	public void setPessoasJuridica(Map<String, PessoaJuridica> pessoasJuridica) {
 		this.pessoasJuridica = pessoasJuridica;
 	}
+	
+    public Map<String,PessoaFisica> savePessoaFisica(PessoaFisica pessoaFisica){
+    	this.pessoasFisica.put(pessoaFisica.getId(), pessoaFisica);
+    	return pessoasFisica;
+    }
+    
+    public Map<String,PessoaJuridica> savePessoasJuridica(PessoaJuridica pessoaJuridica){
+    	this.pessoasJuridica.put(pessoaJuridica.getId(), pessoaJuridica);
+		return pessoasJuridica;
+    	
+    }
+    
+    public PessoaFisica getPessoaFisica(String id){
+    	return this.pessoasFisica.get(id);
+    }
+    
+    public PessoaJuridica getPessoaJuridica(String id){
+    	return this.pessoasJuridica.get(id);
+    }
 	
 	public Sistema(Stage stage, Scene scene, Map<String, PessoaFisica> pessoasFisica,
 			Map<String, PessoaJuridica> pessoasJuridica) {

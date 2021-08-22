@@ -6,6 +6,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Scanner;
 
+import entity.Sistema;
 import entity.pessoa.Endereco;
 import entity.pessoa.Pessoa;
 import entity.pessoa.PessoaFisica;
@@ -19,97 +20,63 @@ public class MenuPessoasImpl implements MenuPessoas {
 	Map<String, PessoaJuridica> pessoasJuridica = new HashMap<String,PessoaJuridica>();
 	
     @Override
-    public void remover(Map<String,PessoaFisica> pessoasFisicas, Map<String,PessoaJuridica> pessoasJuridicas, int user){
-    	try {
-	    	if(user == 1){
-	    		for(String chave :pessoasFisicas.keySet()){
-	    			PessoaFisica pessoaFisica = pessoasFisicas.get(chave);
-	    			System.out.println("Chave: " + chave + " | " + pessoaFisica.toString());
-	    		}
-	        }else if(user == 2){
-	        	for(String chave :pessoasJuridicas.keySet()){
-	        		PessoaJuridica pessoaJuridica =pessoasJuridicas.get(chave);
-	    			System.out.println("Chave: " + chave + " | " + pessoaJuridica.toString());
-	    		}
-	        }else{
-	        	throw new Exception();
-	        }
-    	}catch(Exception e){
-    		System.err.println(e.toString());
-    	}
-       
+    public void remover(Sistema sistema, int user){
+//    	try {
+//	    	if(user == 1 && sistema.pessoasFisica.containsKey(verificarChave)){
+//	    		for(String chave : sistema.pessoasFisica.keySet()){
+//	    			PessoaFisica pessoaFisica = sistema.pessoasFisica.get(chave);
+//	    			sistema.pessoasFisica.remove(id)
+//	    		}
+//	        }else if(user == 2){
+//	        	for(String chave :pessoasJuridicas.keySet()){
+//	        		PessoaJuridica pessoaJuridica =pessoasJuridicas.get(chave);
+//	    			System.out.println("Chave: " + chave + " | " + pessoaJuridica.toString());
+//	    		}
+//	        }else{
+//	        	throw new Exception();
+//	        }
+//    	}catch(Exception e){
+//    		System.err.println(e.toString());
+//    	}
+//       
     }
 
     @Override
-    public void exibir(Map<String,PessoaFisica> pessoasFisicas, Map<String,PessoaJuridica> pessoasJuridicas, int user){
-    	try {
-	    	if(user == 1){
-	    		for(String chave :pessoasFisicas.keySet()){
-	    			PessoaFisica pessoaFisica = pessoasFisicas.get(chave);
-	    			System.out.println("Chave: " + chave + " | " + pessoaFisica.toString());
-	    		}
-	        }else if(user == 2){
-	        	for(String chave :pessoasJuridicas.keySet()){
-	        		PessoaJuridica pessoaJuridica =pessoasJuridicas.get(chave);
-	    			System.out.println("Chave: " + chave + " | " + pessoaJuridica.toString());
-	    		}
-	        }else{
-	        	throw new Exception();
-	        }
-    	}catch(Exception e){
-    		System.err.println(e.toString());
-    	}
+    public void exibir(Sistema sistema, int user){
+//    	try {
+//	    	if(user == 1){
+//	    		for(String chave :pessoasFisicas.keySet()){
+//	    			PessoaFisica pessoaFisica = pessoasFisicas.get(chave);
+//	    			System.out.println("Chave: " + chave + " | " + pessoaFisica.toString());
+//	    		}
+//	        }else if(user == 2){
+//	        	for(String chave :pessoasJuridicas.keySet()){
+//	        		PessoaJuridica pessoaJuridica =pessoasJuridicas.get(chave);
+//	    			System.out.println("Chave: " + chave + " | " + pessoaJuridica.toString());
+//	    		}
+//	        }else{
+//	        	throw new Exception();
+//	        }
+//    	}catch(Exception e){
+//    		System.err.println(e.toString());
+//    	}
         
     }
 
     @Override
-    public void adicionar(Map<String,PessoaFisica> pessoasFisicas, Map<String,PessoaJuridica> pessoasJuridicas, int user){
+    public void adicionar(Sistema sistema, int user){
     	try {
-	    	if(user == 1){
-	    		for(String chave :pessoasFisicas.keySet()){
-	    			PessoaFisica pessoaFisica = pessoasFisicas.get(chave);
-	    			System.out.println("Chave: " + chave + " | " + pessoaFisica.toString());
-	    		}
-	        }else if(user == 2){
-	        	for(String chave :pessoasJuridicas.keySet()){
-	        		PessoaJuridica pessoaJuridica =pessoasJuridicas.get(chave);
-	    			System.out.println("Chave: " + chave + " | " + pessoaJuridica.toString());
-	    		}
-	        }else{
+	    	if(user == 1)
+	    		sistema.pessoasFisica.put(null, null);
+	    	else if(user == 2)
+	        	sistema.pessoasJuridica.put(null, null);
+	        else
 	        	throw new Exception();
-	        }
+	        
     	}catch(Exception e){
     		System.err.println(e.toString());
     	}
 
-    }
-	
-
-    public Map<String,PessoaFisica> savePessoaFisica(PessoaFisica pessoaFisica){
-    	this.pessoasFisica.put(pessoaFisica.getId(), pessoaFisica);
-    	return pessoasFisica;
-    }
-    
-    public Map<String,PessoaJuridica> savePessoasJuridica(PessoaJuridica pessoaJuridica){
-    	this.pessoasJuridica.put(pessoaJuridica.getId(), pessoaJuridica);
-		return pessoasJuridica;
-    	
-    }
-    
-    public Map<String,PessoaFisica> getPessoasFisica(){
-    	for(String chave :pessoasFisica.keySet()){
-			PessoaFisica pessoaFisica = pessoasFisica.get(chave);
-			System.out.println(pessoaFisica.toString());
-		}
-    	return pessoasFisica;
-    }
-    
-    public Map<String,PessoaJuridica> getPessoasJuridica(){
-    	for(String chave :pessoasJuridica.keySet()){
-    		PessoaJuridica pessoaJuridica = pessoasJuridica.get(chave);
-    		System.out.println(pessoaJuridica.toString());
-		}
-    	return pessoasJuridica;
     }
 
 }
