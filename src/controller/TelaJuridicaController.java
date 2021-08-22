@@ -5,6 +5,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import application.App;
+import entity.Sistema;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -15,7 +16,7 @@ import javafx.stage.Stage;
 
 public class TelaJuridicaController  implements Initializable{
 
-	Stage stage = new Stage();
+	Sistema sistema = new Sistema();
 	App app = new App();
 	
 	@FXML
@@ -27,7 +28,7 @@ public class TelaJuridicaController  implements Initializable{
 
     @FXML
     void acaoPessoaFisica(ActionEvent event) throws IOException {
-    	Scene scene = app.TelaPessoaFisica(stage);
+    	Scene scene = app.TelaPessoaFisica(sistema);
     	Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 		stage.setScene(scene);
 		stage.show();

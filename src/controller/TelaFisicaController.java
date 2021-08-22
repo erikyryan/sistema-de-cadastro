@@ -7,6 +7,7 @@ import java.util.Map;
 import java.util.ResourceBundle;
 
 import application.App;
+import entity.Sistema;
 import entity.pessoa.PessoaFisica;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -21,10 +22,11 @@ import javafx.stage.Stage;
 
 public class TelaFisicaController implements Initializable{
     
-	Stage stage = new Stage();
+	Sistema sistema = new Sistema();
 	App app = new App();
 	
 	Map<String,PessoaFisica> pessoas = new HashMap<String,PessoaFisica>();
+	
 	
 	@FXML
     private Button telaPrincipal;
@@ -123,7 +125,7 @@ public class TelaFisicaController implements Initializable{
     
     @FXML
     void acaoTelaPrincipal(ActionEvent event) throws IOException {
-    	Scene scene = app.TelaPrincipal(stage);
+    	Scene scene = app.TelaPrincipal(sistema);
     	Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 		stage.setScene(scene);
 		stage.show();
@@ -131,7 +133,7 @@ public class TelaFisicaController implements Initializable{
     
     @FXML
     void acaoPessoaJuridica(ActionEvent event) throws IOException {
-    	Scene scene = app.TelaPessoaJuridica(stage);
+    	Scene scene = app.TelaPessoaJuridica(sistema);
     	Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 		stage.setScene(scene);
 		stage.show();

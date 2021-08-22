@@ -1,7 +1,12 @@
 package application;
 
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 
+import entity.Sistema;
+import entity.pessoa.PessoaFisica;
+import entity.pessoa.PessoaJuridica;
 import javafx.application.Application;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
@@ -10,10 +15,12 @@ import javafx.fxml.FXMLLoader;
 
 public class App extends Application{
 	
+	Sistema sistema = new Sistema();
+	
 	@Override
 	public void start(Stage stage) {
 		try {
-			stage.setScene(TelaPrincipal(stage));
+			stage.setScene(TelaPrincipal(sistema));
 			stage.show();
 		} catch(Exception e) {
 			e.printStackTrace();
@@ -24,21 +31,24 @@ public class App extends Application{
 		launch(args);
 	}
 
-	public Scene TelaPrincipal(Stage stage) throws IOException {
+	public Scene TelaPrincipal(Sistema sistema) throws IOException {
 		BorderPane root = (BorderPane)FXMLLoader.load(getClass().getResource("../view/TelaPrincipal.fxml"));
+		this.sistema = sistema;
 		Scene scene = new Scene(root);
 		return scene;
 	}
 	
-	public Scene TelaPessoaFisica(Stage stage) throws IOException {
+	public Scene TelaPessoaFisica(Sistema sistema) throws IOException {
 		BorderPane root = (BorderPane)FXMLLoader.load(getClass().getResource("../view/TelaPessoaFisica.fxml"));
+		this.sistema = sistema;
 		Scene scene = new Scene(root);
 		return scene;
 		
 	}
 	
-	public Scene TelaPessoaJuridica(Stage stage) throws IOException {
+	public Scene TelaPessoaJuridica(Sistema sistema) throws IOException {
 		BorderPane root = (BorderPane)FXMLLoader.load(getClass().getResource("../view/TelaPessoaJuridica.fxml"));
+		this.sistema = sistema;
 		Scene scene = new Scene(root);
 		return scene;
 	}
