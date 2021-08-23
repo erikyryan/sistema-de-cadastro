@@ -6,6 +6,8 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.ResourceBundle;
 
+import javax.swing.JOptionPane;
+
 import application.App;
 import entity.Sistema;
 import entity.pessoa.PessoaFisica;
@@ -100,23 +102,40 @@ public class TelaFisicaController implements Initializable{
 
     @FXML
     void Alterando(ActionEvent event) {
-    	if(pessoas.containsKey((String) TextFieldID.getText())){
-    		PessoaFisica pessoa = new PessoaFisica();
-        	pessoa.setNome((String) TextFieldName.getText());
-        	pessoa.setCpf((String) TextFieldCPF.getText());
-        	pessoa.setEndereco((String) TextFieldCidade.getText(),
-        			(String) TextFieldCEP.getText(), (String) TextFieldNumero.getText());
-        	pessoa.setSenha((String) TextFieldSenha.getText());
-        	
-        	sistema.savePessoaFisica(pessoa);
-    	}else {
-    		System.out.println("[ERROR]: Pessoa não encontrada");
+    	try {
+	    	if(pessoas.containsKey((String) TextFieldID.getText())){
+	    		PessoaFisica pessoa = new PessoaFisica();
+	        	pessoa.setNome((String) TextFieldName.getText());
+	        	pessoa.setCpf((String) TextFieldCPF.getText());
+	        	pessoa.setEndereco((String) TextFieldCidade.getText(),
+	        			(String) TextFieldCEP.getText(), (String) TextFieldNumero.getText());
+	        	pessoa.setSenha((String) TextFieldSenha.getText());
+	        	
+	        	sistema.savePessoaFisica(pessoa);
+	    	}else 
+	    		throw new IllegalArgumentException();
+	    	
+    	}catch(IllegalArgumentException e) {
+    		JOptionPane.showMessageDialog(null, "ID não informado ou invalido (" + e.toString() +")");
+    	}
+    	catch(Exception e) {
+    		JOptionPane.showMessageDialog(null, e.toString());
     	}
     }
 
     @FXML
     void Deletando(ActionEvent event) {
-    	System.out.println("deletando!");
+    	try {
+    		if(pessoas.containsKey((String) TextFieldID.getText())){
+    			pessoas.remove((String) TextFieldID.getText());
+    		}else
+    			throw new IllegalArgumentException();
+    		
+	    }catch(IllegalArgumentException e) {
+			JOptionPane.showMessageDialog(null, "ID não informado ou invalido (" + e.toString() +")");
+		}catch(Exception e) {
+			JOptionPane.showMessageDialog(null,"[ERROR]:" + e.toString());
+		}
 
     }
     
