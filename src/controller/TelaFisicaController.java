@@ -14,6 +14,7 @@ import entity.pessoa.PessoaFisica;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -21,6 +22,7 @@ import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
+import javafx.collections.FXCollections;
 
 
 public class TelaFisicaController implements Initializable{
@@ -29,7 +31,7 @@ public class TelaFisicaController implements Initializable{
 	App app = new App();
 	
 	Map<String,PessoaFisica> pessoas = new HashMap<String,PessoaFisica>();
-	
+	private ObservableList<PessoaFisica> obsPessoas;
 	
     @FXML
     private Button telaPrincipal;
@@ -89,10 +91,11 @@ public class TelaFisicaController implements Initializable{
     private TextField txtNome;
 
     @FXML
-    private ListView<?> listar;
+    private ListView<PessoaFisica> listar;
 
     @FXML
     void adicionando(ActionEvent event) {
+    	carregarPessoasFisica();
     	try {
 	    	if(txtID.getText().isBlank() == false) {
 		    	PessoaFisica pessoa = new PessoaFisica();
@@ -111,21 +114,24 @@ public class TelaFisicaController implements Initializable{
     	}
     	catch(Exception e) {
     		JOptionPane.showMessageDialog(null,"[ERRO]:" + e.toString());
-    	}
+    	}finally {
+			carregarPessoasFisica();
+		}
     }
 
     @FXML
     void alterando(ActionEvent event) {
+    	carregarPessoasFisica();
     	try {
     		if(txtID.getText().isBlank() == false) {
 	    		if(sistema.pessoasFisica.containsKey((String) txtID.getText())){
 		    		PessoaFisica pessoa = new PessoaFisica();
+		    		pessoa.setId((String) txtID.getText());
 		        	pessoa.setNome((String) txtNome.getText());
 		        	pessoa.setCpf((String) txtCPF.getText());
 		        	pessoa.setEndereco((String) txtCidade.getText(),
 		        			(String) txtCEP.getText(), (String) txtNumero.getText());
 		        	pessoa.setSenha((String) txtSenha.getText());
-		        	
 		        	sistema.savePessoaFisica(pessoa);
 		    	}else 
 		    		throw new IllegalArgumentException();
@@ -136,11 +142,14 @@ public class TelaFisicaController implements Initializable{
     	}
     	catch(Exception e) {
     		JOptionPane.showMessageDialog(null,"[ERRO]:" + e.toString());
-    	}
+    	}finally {
+			carregarPessoasFisica();
+		}
     }
 
     @FXML
     void deletando(ActionEvent event) {
+    	carregarPessoasFisica();
     	try {
     		if(sistema.pessoasFisica.containsKey((String) txtID.getText())){
     			sistema.pessoasFisica.remove((String) txtID.getText());
@@ -151,6 +160,8 @@ public class TelaFisicaController implements Initializable{
 			JOptionPane.showMessageDialog(null, "ID não informado ou invalido (" + e.toString() +")");
 		}catch(Exception e) {
 			JOptionPane.showMessageDialog(null,"[ERRO]:" + e.toString());
+		}finally {
+			carregarPessoasFisica();
 		}
 
     }
@@ -173,7 +184,12 @@ public class TelaFisicaController implements Initializable{
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
-
+		carregarPessoasFisica();
+	}
+	
+	public void carregarPessoasFisica() {
+		obsPessoas = FXCollections.observableList(sistema.HashFisicaToList(sistema.pessoasFisica));
+		listar.setItems(obsPessoas);
 	}
 	
 }

@@ -1,6 +1,8 @@
 package entity;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import entity.pessoa.PessoaFisica;
@@ -13,6 +15,9 @@ public class Sistema {
 	public Scene scene;
 	public Map<String, PessoaFisica> pessoasFisica = new HashMap<String,PessoaFisica>();
 	public Map<String, PessoaJuridica> pessoasJuridica = new HashMap<String,PessoaJuridica>();
+	
+	public List<PessoaFisica> pessoasFisicaList = new ArrayList<>();
+	public List<PessoaFisica> pessoasJuridicaList = new ArrayList<>();
 	
 	public Stage getStage() {
 		return stage;
@@ -83,5 +88,14 @@ public class Sistema {
 		super();
 	}
 
+	public List<PessoaFisica> HashFisicaToList(Map<String, PessoaFisica> pessoasMap) {
+		pessoasFisicaList.clear();
+		
+		pessoasMap.forEach((key,value)-> {
+			pessoasFisicaList.add(value);
+		});
+		
+		return pessoasFisicaList;
+	}
 	
 }
