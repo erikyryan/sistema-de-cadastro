@@ -12,6 +12,7 @@ import application.App;
 import entity.Sistema;
 import entity.pessoa.PessoaFisica;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -30,53 +31,41 @@ public class TelaFisicaController implements Initializable{
 	Map<String,PessoaFisica> pessoas = new HashMap<String,PessoaFisica>();
 	
 	
-	@FXML
+    @FXML
     private Button telaPrincipal;
 
-	@FXML
+    @FXML
     private Button pessoaJuridica;
-	
-	@FXML
-    private Label labelID;
-
-	@FXML
-	private TextField TextFieldID;
-
-	@FXML
-    private Label labelName;
-
-	@FXML
-	private TextField TextFieldName;
 
     @FXML
-    private Label labelSenha;
+    private Label cpf;
 
     @FXML
-    private TextField TextFieldSenha;
-
-	@FXML
-    private Label labelCidade;
-
-	@FXML
-    private TextField TextFieldCidade;
-
-	@FXML
-	private Label labelCEP;
+    private TextField txtCPF;
 
     @FXML
-	private TextField TextFieldCEP;
+    private Label senha;
 
     @FXML
-    private Label labelCPF;
+    private TextField txtSenha;
 
     @FXML
-    private TextField TextFieldCPF;
-    
-    @FXML
-    private Label labelNumero;
+    private Label cidade;
 
     @FXML
-    private TextField TextFieldNumero;
+    private TextField txtCidade;
+
+    @FXML
+    private Label cep;
+
+    @FXML
+    private TextField txtCEP;
+
+    @FXML
+    private Label numero;
+
+    @FXML
+    private TextField txtNumero;
 
     @FXML
     private Button adicionar;
@@ -88,16 +77,31 @@ public class TelaFisicaController implements Initializable{
     private Button delete;
 
     @FXML
-    void Adicionando(ActionEvent event) {
+    private Label id;
+
+    @FXML
+    private TextField txtID;
+
+    @FXML
+    private Label nome;
+
+    @FXML
+    private TextField txtNome;
+
+    @FXML
+    private ListView<?> listar;
+
+    @FXML
+    void adicionando(ActionEvent event) {
     	try {
-	    	if(TextFieldID.getText().isBlank() == false) {
+	    	if(txtID.getText().isBlank() == false) {
 		    	PessoaFisica pessoa = new PessoaFisica();
-		    	pessoa.setId((String)TextFieldID.getText());
-		    	pessoa.setNome((String) TextFieldName.getText());
-		    	pessoa.setCpf((String) TextFieldCPF.getText());
-		    	pessoa.setEndereco((String) TextFieldCidade.getText(),
-		    			(String) TextFieldCEP.getText(), (String) TextFieldNumero.getText());
-		    	pessoa.setSenha((String) TextFieldSenha.getText());
+		    	pessoa.setId((String)txtID.getText());
+		    	pessoa.setNome((String) txtNome.getText());
+		    	pessoa.setCpf((String) txtCPF.getText());
+		    	pessoa.setEndereco((String) txtCidade.getText(),
+		    			(String) txtCEP.getText(), (String) txtNumero.getText());
+		    	pessoa.setSenha((String) txtSenha.getText());
 		    	
 		    	sistema.savePessoaFisica(pessoa);
 	    	}else
@@ -106,21 +110,21 @@ public class TelaFisicaController implements Initializable{
     		JOptionPane.showMessageDialog(null, "ID não informado ou invalido (" + e.toString() +")");
     	}
     	catch(Exception e) {
-    		JOptionPane.showMessageDialog(null, e.toString());
+    		JOptionPane.showMessageDialog(null,"[ERRO]:" + e.toString());
     	}
     }
 
     @FXML
-    void Alterando(ActionEvent event) {
+    void alterando(ActionEvent event) {
     	try {
-    		if(TextFieldID.getText().isBlank() == false) {
-	    		if(sistema.pessoasFisica.containsKey((String) TextFieldID.getText())){
+    		if(txtID.getText().isBlank() == false) {
+	    		if(sistema.pessoasFisica.containsKey((String) txtID.getText())){
 		    		PessoaFisica pessoa = new PessoaFisica();
-		        	pessoa.setNome((String) TextFieldName.getText());
-		        	pessoa.setCpf((String) TextFieldCPF.getText());
-		        	pessoa.setEndereco((String) TextFieldCidade.getText(),
-		        			(String) TextFieldCEP.getText(), (String) TextFieldNumero.getText());
-		        	pessoa.setSenha((String) TextFieldSenha.getText());
+		        	pessoa.setNome((String) txtNome.getText());
+		        	pessoa.setCpf((String) txtCPF.getText());
+		        	pessoa.setEndereco((String) txtCidade.getText(),
+		        			(String) txtCEP.getText(), (String) txtNumero.getText());
+		        	pessoa.setSenha((String) txtSenha.getText());
 		        	
 		        	sistema.savePessoaFisica(pessoa);
 		    	}else 
@@ -131,22 +135,22 @@ public class TelaFisicaController implements Initializable{
     		JOptionPane.showMessageDialog(null, "ID não informado ou invalido (" + e.toString() +")");
     	}
     	catch(Exception e) {
-    		JOptionPane.showMessageDialog(null, e.toString());
+    		JOptionPane.showMessageDialog(null,"[ERRO]:" + e.toString());
     	}
     }
 
     @FXML
-    void Deletando(ActionEvent event) {
+    void deletando(ActionEvent event) {
     	try {
-    		if(sistema.pessoasFisica.containsKey((String) TextFieldID.getText())){
-    			sistema.pessoasFisica.remove((String) TextFieldID.getText());
+    		if(sistema.pessoasFisica.containsKey((String) txtID.getText())){
+    			sistema.pessoasFisica.remove((String) txtID.getText());
     		}else
     			throw new IllegalArgumentException();
     		
 	    }catch(IllegalArgumentException e) {
 			JOptionPane.showMessageDialog(null, "ID não informado ou invalido (" + e.toString() +")");
 		}catch(Exception e) {
-			JOptionPane.showMessageDialog(null,"[ERROR]:" + e.toString());
+			JOptionPane.showMessageDialog(null,"[ERRO]:" + e.toString());
 		}
 
     }
@@ -169,8 +173,7 @@ public class TelaFisicaController implements Initializable{
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
-		// TODO Auto-generated method stub
-		
+
 	}
 	
 }

@@ -1,12 +1,8 @@
 package application;
 
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
 
 import entity.Sistema;
-import entity.pessoa.PessoaFisica;
-import entity.pessoa.PessoaJuridica;
 import javafx.application.Application;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
