@@ -89,32 +89,44 @@ public class TelaFisicaController implements Initializable{
 
     @FXML
     void Adicionando(ActionEvent event) {
-    	PessoaFisica pessoa = new PessoaFisica();
-    	pessoa.setId((String)TextFieldID.getText());
-    	pessoa.setNome((String) TextFieldName.getText());
-    	pessoa.setCpf((String) TextFieldCPF.getText());
-    	pessoa.setEndereco((String) TextFieldCidade.getText(),
-    			(String) TextFieldCEP.getText(), (String) TextFieldNumero.getText());
-    	pessoa.setSenha((String) TextFieldSenha.getText());
-    	
-    	sistema.savePessoaFisica(pessoa);
+    	try {
+	    	if(TextFieldID.getText().isBlank() == false) {
+		    	PessoaFisica pessoa = new PessoaFisica();
+		    	pessoa.setId((String)TextFieldID.getText());
+		    	pessoa.setNome((String) TextFieldName.getText());
+		    	pessoa.setCpf((String) TextFieldCPF.getText());
+		    	pessoa.setEndereco((String) TextFieldCidade.getText(),
+		    			(String) TextFieldCEP.getText(), (String) TextFieldNumero.getText());
+		    	pessoa.setSenha((String) TextFieldSenha.getText());
+		    	
+		    	sistema.savePessoaFisica(pessoa);
+	    	}else
+	    		throw new Exception("ID nao informado");
+    	}catch(IllegalArgumentException e) {
+    		JOptionPane.showMessageDialog(null, "ID não informado ou invalido (" + e.toString() +")");
+    	}
+    	catch(Exception e) {
+    		JOptionPane.showMessageDialog(null, e.toString());
+    	}
     }
 
     @FXML
     void Alterando(ActionEvent event) {
     	try {
-    		if(sistema.pessoasFisica.containsKey((String) TextFieldID.getText())){
-	    		PessoaFisica pessoa = new PessoaFisica();
-	        	pessoa.setNome((String) TextFieldName.getText());
-	        	pessoa.setCpf((String) TextFieldCPF.getText());
-	        	pessoa.setEndereco((String) TextFieldCidade.getText(),
-	        			(String) TextFieldCEP.getText(), (String) TextFieldNumero.getText());
-	        	pessoa.setSenha((String) TextFieldSenha.getText());
-	        	
-	        	sistema.savePessoaFisica(pessoa);
-	    	}else 
-	    		throw new IllegalArgumentException();
-	    	
+    		if(TextFieldID.getText().isBlank() == false) {
+	    		if(sistema.pessoasFisica.containsKey((String) TextFieldID.getText())){
+		    		PessoaFisica pessoa = new PessoaFisica();
+		        	pessoa.setNome((String) TextFieldName.getText());
+		        	pessoa.setCpf((String) TextFieldCPF.getText());
+		        	pessoa.setEndereco((String) TextFieldCidade.getText(),
+		        			(String) TextFieldCEP.getText(), (String) TextFieldNumero.getText());
+		        	pessoa.setSenha((String) TextFieldSenha.getText());
+		        	
+		        	sistema.savePessoaFisica(pessoa);
+		    	}else 
+		    		throw new IllegalArgumentException();
+    		}else
+    			throw new Exception("ID nao informado");
     	}catch(IllegalArgumentException e) {
     		JOptionPane.showMessageDialog(null, "ID não informado ou invalido (" + e.toString() +")");
     	}
@@ -161,9 +173,4 @@ public class TelaFisicaController implements Initializable{
 		
 	}
 	
-//   public Map<String,PessoaFisica> setPessoaFisica(PessoaFisica pessoaFisica) {
-//	   pessoas.put(pessoaFisica.getId(), pessoaFisica);
-//	   sistema.savePessoaFisica(pessoaFisica);
-//	   return pessoas;
-//   }
 }
