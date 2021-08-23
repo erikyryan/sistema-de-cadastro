@@ -79,6 +79,9 @@ public class TelaFisicaController implements Initializable{
     private Button delete;
 
     @FXML
+    private Button limpar;
+
+    @FXML
     private Label id;
 
     @FXML
@@ -89,7 +92,8 @@ public class TelaFisicaController implements Initializable{
 
     @FXML
     private TextField txtNome;
-
+    
+   
     @FXML
     private ListView<PessoaFisica> listar;
 
@@ -116,6 +120,7 @@ public class TelaFisicaController implements Initializable{
     		JOptionPane.showMessageDialog(null,"[ERRO]:" + e.toString());
     	}finally {
 			carregarPessoasFisica();
+			limpandoCampos();
 		}
     }
 
@@ -144,6 +149,7 @@ public class TelaFisicaController implements Initializable{
     		JOptionPane.showMessageDialog(null,"[ERRO]:" + e.toString());
     	}finally {
 			carregarPessoasFisica();
+			limpandoCampos();
 		}
     }
 
@@ -162,8 +168,14 @@ public class TelaFisicaController implements Initializable{
 			JOptionPane.showMessageDialog(null,"[ERRO]:" + e.toString());
 		}finally {
 			carregarPessoasFisica();
+			limpandoCampos();
 		}
 
+    }
+
+    @FXML
+    void limpando(ActionEvent event){
+    	limpandoCampos();
     }
     
     @FXML
@@ -192,4 +204,13 @@ public class TelaFisicaController implements Initializable{
 		listar.setItems(obsPessoas);
 	}
 	
+	public void limpandoCampos() {
+		txtNome.setText("");
+    	txtSenha.setText("");
+    	txtCPF.setText("");
+    	txtID.setText("");
+    	txtNumero.setText("");
+    	txtCEP.setText("");
+    	txtCidade.setText("");
+	}
 }

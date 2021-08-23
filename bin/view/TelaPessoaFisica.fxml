@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.BorderPane?>
 
 <BorderPane xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.TelaFisicaController">
-   <top>
+   <center>
       <AnchorPane prefHeight="537.0" prefWidth="603.0" BorderPane.alignment="CENTER">
          <children>
             <Button fx:id="telaPrincipal" layoutX="443.0" layoutY="449.0" mnemonicParsing="false" onAction="#acaoTelaPrincipal" prefHeight="57.0" prefWidth="98.0" text="Tela Principal" />
@@ -31,7 +31,8 @@
             <Label fx:id="nome" layoutX="72.0" layoutY="49.0" prefHeight="24.0" prefWidth="40.0" text="Nome:" />
             <TextField fx:id="txtNome" layoutX="121.0" layoutY="49.0" prefHeight="25.0" prefWidth="415.0" />
             <ListView fx:id="listar" layoutX="72.0" layoutY="232.0" prefHeight="187.0" prefWidth="466.0" />
+            <Button fx:id="limpar" layoutX="68.0" layoutY="449.0" mnemonicParsing="false" onAction="#limpando" prefHeight="58.0" prefWidth="110.0" text="Limpar" />
          </children>
       </AnchorPane>
-   </top>
+   </center>
 </BorderPane>
