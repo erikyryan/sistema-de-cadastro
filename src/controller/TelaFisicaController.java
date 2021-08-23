@@ -139,7 +139,7 @@ public class TelaFisicaController implements Initializable{
     void Deletando(ActionEvent event) {
     	try {
     		if(sistema.pessoasFisica.containsKey((String) TextFieldID.getText())){
-    			pessoas.remove((String) TextFieldID.getText());
+    			sistema.pessoasFisica.remove((String) TextFieldID.getText());
     		}else
     			throw new IllegalArgumentException();
     		
