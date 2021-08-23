@@ -103,7 +103,7 @@ public class TelaFisicaController implements Initializable{
     @FXML
     void Alterando(ActionEvent event) {
     	try {
-	    	if(pessoas.containsKey((String) TextFieldID.getText())){
+    		if(sistema.pessoasFisica.containsKey((String) TextFieldID.getText())){
 	    		PessoaFisica pessoa = new PessoaFisica();
 	        	pessoa.setNome((String) TextFieldName.getText());
 	        	pessoa.setCpf((String) TextFieldCPF.getText());
@@ -126,7 +126,7 @@ public class TelaFisicaController implements Initializable{
     @FXML
     void Deletando(ActionEvent event) {
     	try {
-    		if(pessoas.containsKey((String) TextFieldID.getText())){
+    		if(sistema.pessoasFisica.containsKey((String) TextFieldID.getText())){
     			pessoas.remove((String) TextFieldID.getText());
     		}else
     			throw new IllegalArgumentException();
