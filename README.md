@@ -118,6 +118,53 @@ JavaFX é a nova biblioteca gráfica da plataforma Java que serve para:
 
 2.15 Compile o código
 
+## Construção das interfaces graficas
+
+Como já abordado foi utilizado a bibllioteca JavaFx para a construção das interfaces graficas, mas com o intuito de simplificar e tornar a produção mais ilustrativa foi usado o software [Scene Builder](https://gluonhq.com/products/scene-builder/), ferramenta de layout visual que permite aos usuários criar interfaces de usuário de aplicativos JavaFX rapidamente, sem codificação.
+
+Com essa aplicação basta arrasta e soltar componentes do UI, alterando tambem todo seu layout, desde fonte de letras ate dimensões, modificaçoes em sua propriedade e o codigo FXML é gerado automaticamente quando o arquivo é salvo. Além disso, por ser do tipo FXML, o arquivo pode ser combinado com o projeto java sem embicilhos. 
+
+## Tecnologias
+
+[Java11](https://www.oracle.com/br/java/technologies/javase-jdk11-downloads.html)
+
+[JavaFx](https://gluonhq.com/products/javafx/)
+
+[Eclipse](https://www.eclipse.org/downloads/)
+
+[VsCode](https://code.visualstudio.com/download) 
+
+[Scene Builder](https://gluonhq.com/products/scene-builder/)
+
+## Contribuições 
+
+
+## Lincença
+
+MIT License
+
+Copyright (c) <2021> <>
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+
+
 
 
 
