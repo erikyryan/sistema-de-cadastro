@@ -9,12 +9,10 @@ Antes de começar é necessario tter instalado na maquina
 Biblioteca grafica [JavaFx](https://gluonhq.com/products/javafx/) para a compilação concreta do sistema
 e configurar no Classbath.
 
-Uso de um editor para trabalhar com o código
+Uso de um editor para trabalhar com o código, como o[Eclipse](https://www.eclipse.org/downloads/) e o [VsCode](https://code.visualstudio.com/download) 
 
 ## IDE's
-Para a criação desse projeto utilizamos a IDE [Eclipse](https://www.eclipse.org/downloads/)
-Contudo outras IDE's podem ser usadas também como, [Visual Studio Code](https://code.visualstudio.com/download) 
-ou [NetBeans](https://netbeans.apache.org/download/index.html), entre outras plataformas
+Para a criação desse projeto utilizamos a IDE [Eclipse](https://www.eclipse.org/downloads/) e o [VsCode](https://code.visualstudio.com/download) 
 
 ### Instalção da IDE
 1.Baixe o arquivo executavel 
@@ -48,9 +46,41 @@ JavaFX é a nova biblioteca gráfica da plataforma Java que serve para:
 
 ### Instalação e configuração 
 
-#### 1.[Eclipse](https://www.eclipse.org/downloads/)
+#### 1. [Eclipse](https://www.eclipse.org/downloads/)
 
+##### Instruções
 
+ 1.1 Abra o Eclipse -> Help -> Eclipse Marketplace
+
+1.2 Procure por "javafx"
+
+1.3 Instale e(fx)eclipse.
+
+1.4 Depois da instalação, reeinicie o Eclipse 
+
+1.5 Crie um novo projeto File -> New -> Project -> Selecione JavaFx
+
+1.6 Crie um projeto JavaFx Project -> next -> nomei o projeto -> finish
+
+1.7 Você vera um erro ao tentar executar, então deve-se configurar o Classpath
+
+1.8 Clique com o botão direito em cima do projetto criado e selecione propriedades
+
+1.9 Escollha Java Build Path -> Libraries -> Add External Jars
+
+2.0 Procure dentro do seu computador a pasta baixada com o javafx-sdk
+
+2.1 Selecione dentro da lib todas as bibliotecas e a pasta src compactada 
+
+2.2 Clique em Apply e Apply and close + F5(refresh)
+
+2.3 Na parte de cima da IDE, clique com o botão direito em cima do Run -> Run configuration
+
+2.4 Java Application -> arguments 
+
+2.5 Escreva --module-path"<diretorio_do_JavaFx_no_computador"--add-modules=javafx.controls,javafx.fxml
+
+2.6 Clique em Aplly, após Run
 
 
 
