@@ -24,7 +24,7 @@ Para a criação desse projeto utilizamos a IDE [Eclipse](https://www.eclipse.or
 4.Para a distribuição Linux, instalar com o  comando
 
 ```bash
-sudo dpkg -i <arquivo.deb>
+sudo dpkg -i <inicial_do_arquivo>
 ```
 ## JavaFx
 
@@ -135,3 +135,27 @@ Com essa aplicação basta arrasta e soltar componentes do UI, alterando tambem 
 [VsCode](https://code.visualstudio.com/download) 
 
 [Scene Builder](https://gluonhq.com/products/scene-builder/)
+
+## Contribuições 
+
+[Eriky Ryan](https://github.com/erikyryan)
+
+[Maria Rebecca](https://github.com/LopesRebecca)
+
+[Juliano Fernandes](https://github.com/julianofernandesrp)
+
+[Davi Fernandes](https://github.com/Davizex)
+
+## Lincença
+
+[Linceça MIT](https://github.com/erikyryan/trabalho-de-poo/blob/main/LICENSE)
+
+
+
+
+
+
+
+
+
+  
