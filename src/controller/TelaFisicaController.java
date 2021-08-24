@@ -213,4 +213,8 @@ public class TelaFisicaController implements Initializable{
     	txtCEP.setText("");
     	txtCidade.setText("");
 	}
+	
+	public TelaFisicaController(Sistema sistema) {
+		this.sistema = sistema;
+	}
 }

@@ -10,7 +10,6 @@ import javax.swing.JOptionPane;
 
 import application.App;
 import entity.Sistema;
-import entity.pessoa.PessoaFisica;
 import entity.pessoa.PessoaJuridica;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
@@ -216,6 +215,10 @@ public class TelaJuridicaController  implements Initializable{
     	txtNumero.setText("");
     	txtCEP.setText("");
     	txtCidade.setText("");
+	}
+	
+	public TelaJuridicaController(Sistema sistema) {
+		this.sistema = sistema;
 	}
 
 }
