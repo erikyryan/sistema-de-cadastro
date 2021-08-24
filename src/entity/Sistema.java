@@ -17,7 +17,7 @@ public class Sistema {
 	public Map<String, PessoaJuridica> pessoasJuridica = new HashMap<String,PessoaJuridica>();
 	
 	public List<PessoaFisica> pessoasFisicaList = new ArrayList<>();
-	public List<PessoaFisica> pessoasJuridicaList = new ArrayList<>();
+	public List<PessoaJuridica> pessoasJuridicaList = new ArrayList<>();
 	
 	public Stage getStage() {
 		return stage;
@@ -96,6 +96,16 @@ public class Sistema {
 		});
 		
 		return pessoasFisicaList;
+	}
+	
+	public List<PessoaJuridica> HashJuridicaToList(Map<String, PessoaJuridica> pessoasMap) {
+		pessoasJuridicaList.clear();
+		
+		pessoasMap.forEach((key,value)-> {
+			pessoasJuridicaList.add(value);
+		});
+		
+		return pessoasJuridicaList;
 	}
 	
 }
