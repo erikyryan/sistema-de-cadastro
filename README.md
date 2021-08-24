@@ -50,6 +50,8 @@ JavaFX é a nova biblioteca gráfica da plataforma Java que serve para:
 
 ##### Instruções
 
+[Video explacativo](https://www.youtube.com/watch?v=KKI7tDozPog)
+
  1.1 Abra o Eclipse -> Help -> Eclipse Marketplace
 
 1.2 Procure por "javafx"
@@ -82,6 +84,39 @@ JavaFX é a nova biblioteca gráfica da plataforma Java que serve para:
 
 2.6 Clique em Aplly, após Run
 
+#### 2. [VsCode](https://code.visualstudio.com/download) 
+
+[Video explicativo](https://www.youtube.com/watch?v=H67COH9F718)
+
+2.1 Verique a veersão do VScode, é preciso está atualizado
+
+2.2 Abra o VScode -> Extension -> Procure por JavaFx -> instale as extenções
+
+2.3 Na barra de cima do editor, clique com o botão direto em View -> Command Palette(cntl+Shift+P)-> Java: Configure Java Runtime -> baixe o JDK 11
+
+2.4 Instale JDK 11  
+
+2.5 Copie o diretorio aonde foi instaldo o JDK, clique com o botão direito no Meu PC (na pasta de documentos) e selecione propriedades
+
+2.6 Advanced system setting -> Envinorment Variables -> Java_home -> Edit e cole o diretorio do JDK
+
+2.7 Reenicie o Vscode
+
+2.8 Crie um novo projeto java -> No build tools -> Java Projetcs -> Selecione o seu projeto 
+
+2.9 Cllique no simbolo '+' em Referenced Libraries
+
+2.10 Procure dentro do seu computador a pasta baixada com o javafx-sdk
+
+2.11 Selecione dentro da lib todas as bibliotecas e a pasta src compactada
+
+2.12 Apos compilar apresentará o seguinte erro: "JavaFX runtine components are missing, and are required to run this application"
+
+2.13 Clique em Run -> open configuration -> .visualcode -> lauch.jason
+
+2.14 adicione a baixo de 'request': "vmArgs": "--module-path <diretorio_onde_esta_javaFX>--add-modules javafx.controls,javafx.fxml"
+
+2.15 Compile o código
 
 
 
