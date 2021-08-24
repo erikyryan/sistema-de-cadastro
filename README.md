@@ -24,7 +24,7 @@ Para a criação desse projeto utilizamos a IDE [Eclipse](https://www.eclipse.or
 4.Para a distribuição Linux, instalar com o  comando
 
 ```bash
-sudo dpkg -i <inicial_do_arquivo>
+sudo dpkg -i <arquivo.deb>
 ```
 ## JavaFx
 
