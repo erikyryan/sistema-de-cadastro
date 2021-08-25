@@ -7,7 +7,7 @@ No desenvolvimento do projeto utilizamos a linguagem Java para todo o funcioname
 Tendo dois HashMap com a função de uma banco de dados.
 
 ### IDE's
-Para a criação desse projeto utilizamos a IDE [Eclipse](https://www.eclipse.org/downloads/) e o [VsCode](https://code.visualstudio.com/download)
+Para a criação desse projeto utilizamos o [Eclipse](https://www.eclipse.org/downloads/) e o [Visaul Studio Code](https://code.visualstudio.com/download)
 
 ### JavaFx
 
