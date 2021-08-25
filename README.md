@@ -52,7 +52,7 @@ e configurar no classpath.
 
 [Davi Fernandes](https://github.com/Davizex)
 
-## Lincença
+## Licença
 
 licenciado sob [MIT](https://github.com/erikyryan/trabalho-de-poo/blob/main/LICENSE)
 
