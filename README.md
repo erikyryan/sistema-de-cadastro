@@ -27,8 +27,6 @@ Antes de começar é necessário ter instalado na máquina
 Biblioteca gráfica [JavaFX-11.0.2](https://gluonhq.com/products/javafx/) para a compilação concreta do sistema
 e configurar no classpath.
 
-Uso de um editor para trabalhar com o código
-
 ## Tecnologias
 
 [jdk-11.0.12](https://www.oracle.com/br/java/technologies/javase-jdk11-downloads.html)  
