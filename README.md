@@ -1,6 +1,6 @@
 # Trabalho III POO
 
-O projeto em questão é um [CRUD](https://angelopublio.com.br/blog/crud) (Create, Read, Update, Delete) completo e com interface gráfica.
+O projeto em questão é um [CRUD](https://angelopublio.com.br/blog/crud) (Create, Read, Update, Delete) usando interface gráfica.
 
 Desenvolvido, puramente, em Java.
 
