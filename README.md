@@ -36,11 +36,11 @@ e configurar no classpath.
 [Scene Builder 16.0.0](https://gluonhq.com/products/scene-builder/)
 
 ## Instalações
-[Como instalar IDE](https://github.com/erikyryan/trabalho-de-poo/edit/main/instalacao/INSTALL.md)
+[Como instalar IDE](https://github.com/erikyryan/sistema-pessoas/blob/main/instalacao/README.md)
 
-[Como instalar e configurar o JavaFX](https://github.com/erikyryan/trabalho-de-poo/edit/main/instalacao/INSTALL.md)
+[Como instalar e configurar o JavaFX](https://github.com/erikyryan/sistema-pessoas/blob/main/instalacao/README.md)
 
-[Como instalar Scene Builder](https://github.com/erikyryan/trabalho-de-poo/edit/main/instalacao/INSTALL.md)
+[Como instalar Scene Builder](https://github.com/erikyryan/sistema-pessoas/blob/main/instalacao/README.md)
 
 ## Contribuições 
 
