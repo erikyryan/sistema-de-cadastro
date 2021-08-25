@@ -54,7 +54,7 @@ sudo dpkg -i <inicial_do_arquivo>
 
 2.6 Clique em Aplly, após Run
 
-### 2. [VsCode](https://code.visualstudio.com/download) 
+### 2. [Visual Studio Code](https://code.visualstudio.com/download) 
 
 2.1 Verique a veersão do VScode, é preciso está atualizado
 
