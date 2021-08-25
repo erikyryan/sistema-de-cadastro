@@ -1,4 +1,4 @@
-# Trabalho III Programação Orientada a Objetos
+# Programação Orientada a Objetos - Trabalho III
 
 O projeto em questão é um [CRUD](https://angelopublio.com.br/blog/crud) (Create, Read, Update, Delete) usando interface gráfica.
 
