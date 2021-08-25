@@ -1,8 +1,6 @@
-# Trabalho III POO
+# Trabalho III Programação Orientada a Objetos
 
 O projeto em questão é um [CRUD](https://angelopublio.com.br/blog/crud) (Create, Read, Update, Delete) usando interface gráfica.
-
-Desenvolvido, puramente, em Java.
 
 ## Desenvolvimento  
 No desenvolvimento do projeto utilizamos a linguagem Java para todo o funcionamento do código, criamos um [CRUD](https://angelopublio.com.br/blog/crud) (Create, Read, Update, Delete) simples, o qual é armazenado as informações em dois HashMap e transformados em lista posteriormente. 
