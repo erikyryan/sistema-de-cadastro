@@ -1,7 +1,25 @@
 # Trabalho III POO
-O projeto em questão é um CRUD, completo e com interface gráfica
+O projeto em questão é um [CRUD](https://angelopublio.com.br/blog/crud) (Create, Read, Update, Delete) completo e com interface gráfica
 
 Desenvolvido, puramente, em java
+
+## Desenvolvimento  
+No desenvolvimento do projeto utilizamos a linguagem java para todo o funcionamento do código, criamos um [CRUD](https://angelopublio.com.br/blog/crud) (Create, Read, Update, Delete) simples, o qual se é armazenado as informações em dois HashMap e transformados em lista posteriormente.
+Tento dois HashMap com a função de uma banco de dados 
+
+### IDE's
+Para a criação desse projeto utilizamos a IDE [Eclipse](https://www.eclipse.org/downloads/) e o [VsCode](https://code.visualstudio.com/download)
+
+### JavaFx
+
+JavaFX é a nova biblioteca gráfica da plataforma Java
+utilizamos para a configuração gráfica do sistema
+
+### Construção das interfaces graficas
+
+Como já abordado foi utilizado a bibllioteca JavaFx para a construção das interfaces graficas, mas com o intuito de simplificar e tornar a produção mais ilustrativa foi usado o software [Scene Builder 16.0.0](https://gluonhq.com/products/scene-builder/), ferramenta de layout visual que permite aos usuários criar interfaces de usuário de aplicativos JavaFX rapidamente, sem codificação.
+
+Com essa aplicação basta arrasta e soltar componentes do UI, alterando tambem todo seu layout, desde fonte de letras ate dimensões, modificaçoes em sua propriedade e o codigo FXML é gerado automaticamente quando o arquivo é salvo. Além disso, por ser do tipo FXML, o arquivo pode ser combinado com o projeto java sem embicilhos. 
 
 ## Pré-requisitos
 
@@ -12,37 +30,6 @@ Biblioteca gráfica [JavaFX-11.0.2](https://gluonhq.com/products/javafx/) para a
 e configurar no Classbath.
 
 Uso de um editor para trabalhar com o código
-
-## Desenvolvimento  
-No desenvolvimento do projeto utilizamos a linguagem java para todo o funcionamento do código, criamos um CRUD simples, o qual se é armazenado as informações em dois HashMap e transformados em lista posteriormente.
-Dento dois HashMap com a função de uma banco de dados 
-
-### [IDE's]
-Para a criação desse projeto utilizamos a IDE [Eclipse](https://www.eclipse.org/downloads/) e o [VsCode](https://code.visualstudio.com/download)
-
-### JavaFx
-
-JavaFX é a nova biblioteca gráfica da plataforma Java que serve para:
-
-1.Criar interfaces gráficas
-
-2.Animações 
-
-3.Desenhar na tela
-
-4.Efeitos 
-
-5.Gráficos 
-
-6.Programar arrastando e soltando
-
-7.Tocar vídeo e áudio
-
-### Construção das interfaces graficas
-
-Como já abordado foi utilizado a bibllioteca JavaFx para a construção das interfaces graficas, mas com o intuito de simplificar e tornar a produção mais ilustrativa foi usado o software [Scene Builder 16.0.0](https://gluonhq.com/products/scene-builder/), ferramenta de layout visual que permite aos usuários criar interfaces de usuário de aplicativos JavaFX rapidamente, sem codificação.
-
-Com essa aplicação basta arrasta e soltar componentes do UI, alterando tambem todo seu layout, desde fonte de letras ate dimensões, modificaçoes em sua propriedade e o codigo FXML é gerado automaticamente quando o arquivo é salvo. Além disso, por ser do tipo FXML, o arquivo pode ser combinado com o projeto java sem embicilhos. 
 
 ## Tecnologias
 
