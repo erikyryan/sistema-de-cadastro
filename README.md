@@ -33,7 +33,11 @@ Uso de um editor para trabalhar com o código
 
 ## Tecnologias
 
-[jdk-11.0.12](https://www.oracle.com/br/java/technologies/javase-jdk11-downloads.html)  [JavaFX-11.0.2](https://gluonhq.com/products/javafx/)   [Eclipse](https://www.eclipse.org/downloads/)   [Visaul Studio Code](https://code.visualstudio.com/download)  [Scene Builder 16.0.0](https://gluonhq.com/products/scene-builder/)
+[jdk-11.0.12](https://www.oracle.com/br/java/technologies/javase-jdk11-downloads.html)  
+[JavaFX-11.0.2](https://gluonhq.com/products/javafx/)   
+[Scene Builder 16.0.0](https://gluonhq.com/products/scene-builder/)
+[Eclipse](https://www.eclipse.org/downloads/)   
+[Visaul Studio Code](https://code.visualstudio.com/download)  
 
 ## Instalações
 [Como instalar IDE](https://github.com/erikyryan/trabalho-de-poo/edit/main/instalacao/INSTALL.md)
