@@ -54,7 +54,7 @@ e configurar no classpath.
 
 ## Lincença
 
-[Linceça MIT](https://github.com/erikyryan/trabalho-de-poo/blob/main/LICENSE)
+[licença MIT](https://github.com/erikyryan/trabalho-de-poo/blob/main/LICENSE)
 
 
 
